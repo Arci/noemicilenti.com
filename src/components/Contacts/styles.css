@@ -1,97 +1,97 @@
 .contact .header-image {
-    margin: 0 15px;
+  margin: 0 15px;
+}
+.contact .header-image img {
+  width: 100%;
+  height: auto;
+}
+@media only screen and (min-width: 992px) {
+  .contact .header-image {
+    margin: 0;
+    display: flex;
+    justify-content: center;
   }
   .contact .header-image img {
-    width: 100%;
-    height: auto;
+    width: auto;
   }
-  @media only screen and (min-width: 992px) {
-    .contact .header-image {
-      margin: 0;
-      display: flex;
-      justify-content: center;
-    }
-    .contact .header-image img {
-      width: auto;
-    }
-  }
+}
+.contact .description {
+  margin: 40px 0;
+  padding: 0 35px;
+  line-height: 1.5em;
+  text-align: justify;
+}
+@media only screen and (min-width: 992px) {
   .contact .description {
-    margin: 40px 0;
-    padding: 0 35px;
-    line-height: 1.5em;
-    text-align: justify;
+    padding: 0 20px;
   }
-  @media only screen and (min-width: 992px) {
-    .contact .description {
-      padding: 0 20px;
-    }
-  }
+}
+.contact .social {
+  width: 100%;
+  padding: 10px;
+  display: block;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 992px) {
   .contact .social {
-    width: 100%;
-    padding: 10px;
-    display: block;
-    margin: 0 auto;
+    display: flex;
   }
-  @media only screen and (min-width: 992px) {
-    .contact .social {
-      display: flex;
-    }
+}
+@media only screen and (min-width: 1200px) {
+  .contact .social {
+    width: 70%;
   }
-  @media only screen and (min-width: 1200px) {
-    .contact .social {
-      width: 70%;
-    }
-  }
+}
+.contact .social p {
+  text-align: center;
+}
+.contact .social p:not(:first-child) {
+  margin-top: 20px;
+}
+@media only screen and (min-width: 992px) {
   .contact .social p {
-    text-align: center;
+    width: 40%;
   }
   .contact .social p:not(:first-child) {
+    margin-top: 0;
+  }
+}
+.contact .social a {
+  text-decoration: none;
+}
+.contact .social a img {
+  vertical-align: middle;
+  width: 20px;
+  height: auto;
+}
+.contact .social a span {
+  padding-left: 8px;
+}
+
+@media only screen and (min-width: 992px) {
+  #social {
     margin-top: 20px;
   }
-  @media only screen and (min-width: 992px) {
-    .contact .social p {
-      width: 40%;
-    }
-    .contact .social p:not(:first-child) {
-      margin-top: 0;
-    }
+}
+@media only screen and (min-width: 992px) {
+  #social ul {
+    /* fix image align with menu */
+    margin-left: -4px;
   }
-  .contact .social a {
-    text-decoration: none;
-  }
-  .contact .social a img {
-    vertical-align: middle;
-    width: 20px;
-    height: auto;
-  }
-  .contact .social a span {
-    padding-left: 8px;
-  }
-
-  @media only screen and (min-width: 992px) {
-    #social {
-      margin-top: 20px;
-    }
-  }
-  @media only screen and (min-width: 992px) {
-    #social ul {
-      /* fix image align with menu */
-      margin-left: -4px;
-    }
-  }
-  #social ul li {
-    display: inline-block;
-    width: 20px;
-  }
-  #social ul li:not(:first-child) {
-    margin-left: 5px;
-  }
-  #social ul li .youtube {
-    /* fix image align */
-    margin-right: 4px;
-  }
-  #social ul li img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
+}
+#social ul li {
+  display: inline-block;
+  width: 20px;
+}
+#social ul li:not(:first-child) {
+  margin-left: 5px;
+}
+#social ul li .youtube {
+  /* fix image align */
+  margin-right: 4px;
+}
+#social ul li img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
