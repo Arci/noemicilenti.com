@@ -67,3 +67,31 @@
   .contact .social a span {
     padding-left: 8px;
   }
+
+  @media only screen and (min-width: 992px) {
+    #social {
+      margin-top: 20px;
+    }
+  }
+  @media only screen and (min-width: 992px) {
+    #social ul {
+      /* fix image align with menu */
+      margin-left: -4px;
+    }
+  }
+  #social ul li {
+    display: inline-block;
+    width: 20px;
+  }
+  #social ul li:not(:first-child) {
+    margin-left: 5px;
+  }
+  #social ul li .youtube {
+    /* fix image align */
+    margin-right: 4px;
+  }
+  #social ul li img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }

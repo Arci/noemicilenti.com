@@ -1,0 +1,105 @@
+#hamburger {
+  text-align: right;
+  position: absolute;
+  margin: 0;
+  right: 20px;
+}
+@media only screen and (min-width: 992px) {
+  #hamburger {
+    display: none;
+  }
+}
+#hamburger img {
+  width: 36px;
+  padding: 5px;
+  border-radius: 5px;
+  border: solid 1px #908f8f;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.links-open {
+  /* show for transition-out */
+  visibility: visible !important;
+  overflow: visible !important;
+  max-height: 500px !important;
+  /* should be more a value greater than final height */
+  margin-bottom: 20px !important;
+  /* transition-in */
+  transition-property: max-height, visibility, overflow, margin;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in;
+}
+
+nav {
+  margin-top: 20px;
+}
+@media only screen and (min-width: 992px) {
+  nav {
+    margin-left: 20px;
+  }
+}
+nav section {
+  text-align: center;
+}
+@media only screen and (min-width: 992px) {
+  nav section {
+    text-align: left;
+  }
+}
+
+#logo {
+  left: 5%;
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 992px) {
+  #logo {
+    margin-bottom: 0;
+  }
+}
+#logo p:first-child {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+#links {
+  background-color: #ffffff;
+  /* hide for transition-in */
+  visibility: hidden;
+  overflow: hidden;
+  max-height: 0;
+  margin-bottom: 0;
+  /* transition-out */
+  transition-property: max-height, visibility, overflow, margin;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+}
+@media only screen and (min-width: 992px) {
+  #links {
+    margin-top: 40px;
+    background-color: #eaeaea;
+    /* unset transition related stuff */
+    visibility: visible;
+    overflow: visible;
+    max-height: unset;
+    transition: none;
+  }
+}
+#links ul li {
+  padding: 10px 0;
+}
+@media only screen and (min-width: 992px) {
+  #links ul li {
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #links ul li:first-child {
+    padding-top: 0;
+  }
+  #links ul li:last-of-type {
+    margin-top: 20px;
+  }
+}
