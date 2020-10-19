@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
 export const FOOD_GALLERY = gql`
-  query foodGallery {
+  query FoodGallery {
     food {
       gallery {
         photos {
