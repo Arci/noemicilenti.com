@@ -1,3 +1,4 @@
+import { GridList, GridListTile } from '@material-ui/core';
 import * as React from 'react';
 import { FoodGalleryQuery } from '../../generated/graphql';
 import './styles.css';
@@ -9,11 +10,13 @@ interface Props {
 const className = 'FoodGallery';
 const FoodGallery: React.FC<Props> = ({ data }) => (
     <div>
-        <div className={`${className}__list`}>
-            {data.food?.gallery?.photos?.map(
-                (photo, i) => <img src={photo?.url} key={i} className={`${className}__item`} />
-            )}
-        </div>
+        <GridList cellHeight={160} className={`${className}__list`} cols={3}>
+            {data.food?.gallery?.photos?.map((photo, i) => (
+                <GridListTile key={i} cols={1}>
+                    <img src={photo?.url} alt={photo?.alternativeText || ""} />
+                </GridListTile>
+            ))}
+        </GridList>
         <div>
             <ol>{data.contact?.email}</ol>
             <ol>{data.contact?.phone}</ol>
