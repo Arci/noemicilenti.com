@@ -11,7 +11,7 @@ const FoodGallery: React.FC<Props> = ({ data }) => (
     <div>
         <div className={`${className}__list`}>
             {data.food?.gallery?.photos?.map(
-                (photo, i) => <ol key={i} className={`${className}__item`}>{photo?.url}</ol>
+                (photo, i) => <img src={photo?.url} key={i} className={`${className}__item`} />
             )}
         </div>
         <div>
