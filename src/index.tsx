@@ -16,5 +16,5 @@ ReactDOM.render(
       <App />
     </ApolloHooksProvider>
   </ApolloProvider>,
-  document.getElementById('root')
+  document.getElementsByTagName('body')[0]
 );

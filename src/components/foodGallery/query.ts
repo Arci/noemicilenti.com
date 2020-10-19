@@ -17,12 +17,10 @@ gql`
       }
     }
     contact {
-      email
-      phone
       social {
         facebook
         instagram
-        vogue
+        youtube
       }
     }
   }

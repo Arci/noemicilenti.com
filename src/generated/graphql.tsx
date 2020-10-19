@@ -711,12 +711,14 @@ export type ComponentSocialSocial = {
   facebook?: Maybe<Scalars['String']>;
   instagram?: Maybe<Scalars['String']>;
   vogue?: Maybe<Scalars['String']>;
+  youtube?: Maybe<Scalars['String']>;
 };
 
 export type ComponentSocialSocialInput = {
   facebook?: Maybe<Scalars['String']>;
   instagram?: Maybe<Scalars['String']>;
   vogue?: Maybe<Scalars['String']>;
+  youtube?: Maybe<Scalars['String']>;
 };
 
 export type EditComponentSocialSocialInput = {
@@ -724,6 +726,7 @@ export type EditComponentSocialSocialInput = {
   facebook?: Maybe<Scalars['String']>;
   instagram?: Maybe<Scalars['String']>;
   vogue?: Maybe<Scalars['String']>;
+  youtube?: Maybe<Scalars['String']>;
 };
 
 export type Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Contact | UpdateContactPayload | DeleteContactPayload | Food | UpdateFoodPayload | DeleteFoodPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_At | UploadFileConnectionUpdated_At | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | DeleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | CreateRolePayload | UpdateRolePayload | DeleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_At | UsersPermissionsUserConnectionUpdated_At | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | CreateUserPayload | UpdateUserPayload | DeleteUserPayload | ComponentGalleryGallery | ComponentSocialSocial;
@@ -987,10 +990,9 @@ export type FoodGalleryQuery = (
     )> }
   )>, contact?: Maybe<(
     { __typename?: 'Contact' }
-    & Pick<Contact, 'email' | 'phone'>
     & { social?: Maybe<(
       { __typename?: 'ComponentSocialSocial' }
-      & Pick<ComponentSocialSocial, 'facebook' | 'instagram' | 'vogue'>
+      & Pick<ComponentSocialSocial, 'facebook' | 'instagram' | 'youtube'>
     )> }
   )> }
 );
@@ -1013,12 +1015,10 @@ export const FoodGalleryDocument = gql`
     }
   }
   contact {
-    email
-    phone
     social {
       facebook
       instagram
-      vogue
+      youtube
     }
   }
 }

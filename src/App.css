@@ -1,38 +1,363 @@
-.App {
+/*
+http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,700");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Roboto Slab", serif;
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Slab", serif;
+  font-weight: normal;
+}
+
+.button {
+  font-family: "Roboto Slab", serif;
+  font-weight: bold;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background-color: #eaeaea;
+  color: #000000;
+}
+body a:link, body a:visited, body a:hover, body a:active {
+  color: inherit;
+  text-decoration: none;
+}
+@media only screen and (min-width: 992px) {
+  body {
+    display: flex;
+  }
+  body nav {
+    width: 15%;
+  }
+  body article.content {
+    width: 85%;
+  }
+}
+body article.content {
+  margin: 20px 0 20px 0;
+}
+@media only screen and (min-width: 992px) {
+  body article.content {
+    margin-right: 20px;
+  }
+}
+
+#hamburger {
+  text-align: right;
+  position: absolute;
+  margin: 0;
+  right: 20px;
+}
+@media only screen and (min-width: 992px) {
+  #hamburger {
+    display: none;
+  }
+}
+#hamburger img {
+  width: 36px;
+  padding: 5px;
+  border-radius: 5px;
+  border: solid 1px #908f8f;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.links-open {
+  /* show for transition-out */
+  visibility: visible !important;
+  overflow: visible !important;
+  max-height: 500px !important;
+  /* should be more a value greater than final height */
+  margin-bottom: 20px !important;
+  /* transition-in */
+  transition-property: max-height, visibility, overflow, margin;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in;
+}
+
+nav {
+  margin-top: 20px;
+}
+@media only screen and (min-width: 992px) {
+  nav {
+    margin-left: 20px;
+  }
+}
+nav section {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (min-width: 992px) {
+  nav section {
+    text-align: left;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#logo {
+  left: 5%;
+  margin-bottom: 20px;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media only screen and (min-width: 992px) {
+  #logo {
+    margin-bottom: 0;
   }
 }
+#logo p:first-child {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+#links {
+  background-color: #ffffff;
+  /* hide for transition-in */
+  visibility: hidden;
+  overflow: hidden;
+  max-height: 0;
+  margin-bottom: 0;
+  /* transition-out */
+  transition-property: max-height, visibility, overflow, margin;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+}
+@media only screen and (min-width: 992px) {
+  #links {
+    margin-top: 40px;
+    background-color: #eaeaea;
+    /* unset transition related stuff */
+    visibility: visible;
+    overflow: visible;
+    max-height: unset;
+    transition: none;
+  }
+}
+#links ul li {
+  padding: 10px 0;
+}
+@media only screen and (min-width: 992px) {
+  #links ul li {
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #links ul li:first-child {
+    padding-top: 0;
+  }
+  #links ul li:last-of-type {
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  #social {
+    margin-top: 20px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #social ul {
+    /* fix image align with menu */
+    margin-left: -4px;
+  }
+}
+#social ul li {
+  display: inline-block;
+  width: 20px;
+}
+#social ul li:not(:first-child) {
+  margin-left: 5px;
+}
+#social ul li .youtube {
+  /* fix image align */
+  margin-right: 4px;
+}
+#social ul li img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+article.content .grid {
+  margin: 0 20px 20px 20px;
+  line-height: 0;
+  column-count: 1;
+}
+article.content .grid img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 5px;
+}
+@media only screen and (min-width: 768px) {
+  article.content .grid {
+    column-gap: 5px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  article.content .grid {
+    margin-right: 20px;
+    column-count: 3;
+    column-gap: 7px;
+  }
+  article.content .grid img {
+    margin-bottom: 7px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  article.content .grid {
+    column-count: 4;
+    column-gap: 9px;
+  }
+  article.content .grid img {
+    margin-bottom: 9px;
+  }
+}
+
+
+/*# sourceMappingURL=style.css.map */
