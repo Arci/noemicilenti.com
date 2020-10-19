@@ -997,7 +997,7 @@ export type FoodGalleryQuery = (
 
 
 export const FoodGalleryDocument = gql`
-    query foodGallery {
+    query FoodGallery {
   food {
     gallery {
       photos {
