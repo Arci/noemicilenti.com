@@ -1,26 +1,31 @@
-body article.content {
+article.content {
   margin: 20px 0 20px 0;
 }
+
 @media only screen and (min-width: 992px) {
-  body article.content {
+  article.content {
     margin-right: 20px;
   }
 }
+
 article.content .grid {
   margin: 0 20px 20px 20px;
   line-height: 0;
   column-count: 1;
 }
+
 article.content .grid img {
   width: 100%;
   height: auto;
   margin-bottom: 5px;
 }
+
 @media only screen and (min-width: 768px) {
   article.content .grid {
     column-gap: 5px;
   }
 }
+
 @media only screen and (min-width: 992px) {
   article.content .grid {
     margin-right: 20px;
@@ -31,6 +36,7 @@ article.content .grid img {
     margin-bottom: 7px;
   }
 }
+
 @media only screen and (min-width: 1200px) {
   article.content .grid {
     column-count: 4;

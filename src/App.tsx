@@ -10,9 +10,7 @@ function App() {
         <Menu />
         <Contacts />
       </nav>
-      <article className="content">
-        <FoodGallery />
-      </article>
+      <FoodGallery />
     </>
   );
 }
