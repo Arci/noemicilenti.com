@@ -11,7 +11,7 @@ const FoodGallery: React.FC<Props> = ({ data }) => (
     <section className="grid" >
       {data.food?.gallery?.photos?.map(
         (photo, i) => (
-          <img src={photo?.url} alt={photo?.alternativeText || ""} />
+          <img key={i} src={photo?.url} alt={photo?.alternativeText || ""} />
         )
       )}
     </section>

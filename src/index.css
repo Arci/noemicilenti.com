@@ -161,23 +161,3 @@ html {
   height: 100%;
 }
 
-body {
-  min-height: 100%;
-  background-color: #eaeaea;
-  color: #000000;
-}
-body a:link, body a:visited, body a:hover, body a:active {
-  color: inherit;
-  text-decoration: none;
-}
-@media only screen and (min-width: 992px) {
-  body {
-    display: flex;
-  }
-  body nav {
-    width: 15%;
-  }
-  body article.content {
-    width: 85%;
-  }
-}

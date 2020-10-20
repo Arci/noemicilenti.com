@@ -1,0 +1,22 @@
+#root {
+  min-height: 100%;
+  background-color: #eaeaea;
+  color: #000000;
+}
+
+#root a:link, #root a:visited, #root a:hover, #root a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 992px) {
+  #root {
+    display: flex;
+  }
+  #root nav {
+    width: 15%;
+  }
+  #root article.content {
+    width: 85%;
+  }
+}
