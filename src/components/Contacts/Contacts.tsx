@@ -26,7 +26,6 @@ const Contacts: React.FC<Props> = ({ data }) => (
       </li>
     </ul>
   </section>
-
 );
 
 export default Contacts
