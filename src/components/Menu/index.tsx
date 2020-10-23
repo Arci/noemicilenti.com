@@ -11,7 +11,7 @@ const Menu: React.FC = () => {
   return (
     <>
       <nav id="hamburger" onClick={clickHandler}>
-        <img src="https://noemicilenti.com/img/hamburger.png" />
+        <img src="https://noemicilenti.com/img/hamburger.png" alt="menu" />
       </nav>
       <section id="logo">
         <a href="contact.html">
