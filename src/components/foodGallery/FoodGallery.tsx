@@ -30,7 +30,7 @@ const FoodGallery: React.FC<Props> = ({ data }) => {
   //     return 0;
   //   }
   // )
-  const photos: PhotoProps[] = data.food?.gallery?.photos?.map(
+  const galleryImages: PhotoProps[] = data.food?.gallery?.photos?.map(
     (photo, i) => (
       {
         src: photo?.url || '',
@@ -47,23 +47,21 @@ const FoodGallery: React.FC<Props> = ({ data }) => {
         height: 0
       }
     ];
+  const carouselImages = galleryImages.map(x => ({
+    ...x,
+    source: x.src,
+    srcset: x.srcSet
+  }))
 
   return (
     <article className="content">
-      <Gallery photos={photos} direction={"column"} onClick={openLightbox} />
+      <Gallery photos={galleryImages} direction={"column"} onClick={openLightbox} />
       <ModalGateway>
-        {viewerIsOpen ? (
+        {viewerIsOpen && (
           <Modal onClose={closeLightbox}>
-            <Carousel
-              currentIndex={currentImage}
-              views={photos.map(x => ({
-                ...x,
-                source: x.src,
-                srcset: x.srcSet
-              }))}
-            />
+            <Carousel currentIndex={currentImage} views={carouselImages} />
           </Modal>
-        ) : null}
+        )}
       </ModalGateway>
     </article>
   )
