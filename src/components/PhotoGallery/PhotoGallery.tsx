@@ -1,14 +1,32 @@
 import React, { useCallback, useState } from 'react';
 import Carousel, { Modal, ModalGateway, ViewType } from 'react-images';
 import Gallery, { PhotoProps } from 'react-photo-gallery';
-import { FoodGalleryQuery } from '../../generated/graphql';
 import './styles.css';
 
-interface Props {
-  data: FoodGalleryQuery;
+export interface Photo {
+  name: string
+  url: string;
+  alternativeText?: string | null;
+  caption?: string | null;
+  width: number;
+  height: number;
+  formats: Formats;
+}
+export interface Formats {
+  small: Format
+  thumbnail: Format
+}
+export interface Format {
+  url: string;
+  width: number;
+  height: number;
 }
 
-const FoodGallery: React.FC<Props> = ({ data }) => {
+interface Props {
+  gallery: Photo[];
+}
+
+const PhotoGallery: React.FC<Props> = ({ gallery }) => {
 
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
@@ -23,35 +41,20 @@ const FoodGallery: React.FC<Props> = ({ data }) => {
     setViewerIsOpen(false);
   };
 
-  const getOrdinal = (fileName: string) => {
-    const match = /[^-]+-(?<ordinal>\d+)/.exec(fileName)
-    return Number(match?.groups?.ordinal)
-  }
-
-  const ordered = data.food?.gallery?.photos?.slice().sort(
-    (a, b) => {
-      const aOrdinal = getOrdinal(a?.name || '')
-      const bOrdinal = getOrdinal(b?.name || '')
-      if (aOrdinal > bOrdinal) { return 1; }
-      if (aOrdinal < bOrdinal) { return -1; }
-      return 0;
-    }
-  ) || []
-  const galleryImages: PhotoProps[] = ordered.map(
-    (photo, i) => {
-      const image = photo?.formats["small"];
-      return {
-        src: image?.url || '',
-        width: image?.width || 0,
-        height: image?.height || 0,
+  const galleryImages: PhotoProps[] = gallery.map(
+    (photo, i) => (
+      {
+        src: photo.formats.small.url,
+        width: photo.formats.small.width,
+        height: photo.formats.small.height,
         alt: photo?.alternativeText || undefined,
         key: i.toString()
       }
-    }
-  ) || [];
-  const carouselImages: ViewType[] = ordered.map(
+    )
+  );
+  const carouselImages: ViewType[] = gallery.map(
     photo => (
-      { source: photo?.url || '' }
+      { source: photo.url }
     )
   )
 
@@ -69,4 +72,4 @@ const FoodGallery: React.FC<Props> = ({ data }) => {
   )
 };
 
-export default FoodGallery
+export default PhotoGallery

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import FoodGallery from './components/FoodGallery';
+import { initGA, trackPageView } from './components/Tracking';
 import Contacts from './components/Contacts';
 import Menu from './components/Menu';
+import PhotoGallery from './components/PhotoGallery';
 import './App.css'
-import { initGA, trackPageView } from './components/Tracking';
 
 initGA('G-Z7QCPWVMCG');
 
@@ -19,7 +19,7 @@ const App: React.FC = () => {
         <Contacts />
       </nav>
       <article className="content">
-        <FoodGallery />
+        <PhotoGallery />
       </article>
     </>
   );
