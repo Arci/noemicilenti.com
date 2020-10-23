@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import FoodGallery from './components/FoodGallery';
 import Contacts from './components/Contacts';
 import Menu from './components/Menu';
 import './App.css'
+import { initGA, trackPageView } from './components/Tracking';
 
-function App() {
+initGA('G-Z7QCPWVMCG');
+
+const App: React.FC = () => {
+  useEffect(() => {
+    trackPageView()
+  });
+
   return (
     <>
       <nav>
