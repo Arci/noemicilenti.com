@@ -23,14 +23,22 @@ const FoodGallery: React.FC<Props> = ({ data }) => {
     setViewerIsOpen(false);
   };
 
-  // .sort(
-  //   (a, b) => {
-  //     if ((a?.url || '') < (b?.url || '')) { return -1; }
-  //     if ((a?.url || '') < (b?.url || '')) { return -1; }
-  //     return 0;
-  //   }
-  // )
-  const galleryImages: PhotoProps[] = data.food?.gallery?.photos?.map(
+  const getOrdinal = (fileName: string) => {
+    const match = /[^-]+-(?<ordinal>\d+)/.exec(fileName)
+    return Number(match?.groups?.ordinal)
+  }
+
+  const ordered = data.food?.gallery?.photos?.slice().sort(
+    (a, b) => {
+      const aOrdinal = getOrdinal(a?.name || '')
+      const bOrdinal = getOrdinal(b?.name || '')
+      console.log(aOrdinal)
+      if (aOrdinal > bOrdinal) { return 1; }
+      if (aOrdinal < bOrdinal) { return -1; }
+      return 0;
+    }
+  ) || []
+  const galleryImages: PhotoProps[] = ordered.map(
     (photo, i) => (
       {
         src: photo?.url || '',
