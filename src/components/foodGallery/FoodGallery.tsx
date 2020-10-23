@@ -38,19 +38,20 @@ const FoodGallery: React.FC<Props> = ({ data }) => {
     }
   ) || []
   const galleryImages: PhotoProps[] = ordered.map(
-    (photo, i) => (
-      {
-        src: photo?.url || '',
-        width: photo?.width || 0,
-        height: photo?.height || 0,
+    (photo, i) => {
+      const image = photo?.formats["small"];
+      return {
+        src: image?.url || '',
+        width: image?.width || 0,
+        height: image?.height || 0,
         alt: photo?.alternativeText || undefined,
         key: i.toString()
       }
-    )
+    }
   ) || [];
-  const carouselImages: ViewType[] = galleryImages.map(
-    image => (
-      { source: image.src }
+  const carouselImages: ViewType[] = ordered.map(
+    photo => (
+      { source: photo?.url || '' }
     )
   )
 
