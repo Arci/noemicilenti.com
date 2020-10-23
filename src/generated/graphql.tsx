@@ -964,11 +964,6 @@ export type MutationEmailConfirmationArgs = {
 };
 
 
-
-
-
-
-
 export enum CacheControlScope {
   Public = 'PUBLIC',
   Private = 'PRIVATE'
@@ -979,22 +974,30 @@ export type FoodGalleryQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type FoodGalleryQuery = (
   { __typename?: 'Query' }
-  & { food?: Maybe<(
-    { __typename?: 'Food' }
-    & { gallery?: Maybe<(
-      { __typename?: 'ComponentGalleryGallery' }
-      & { photos?: Maybe<Array<Maybe<(
-        { __typename?: 'UploadFile' }
-        & Pick<UploadFile, 'name' | 'alternativeText' | 'caption' | 'width' | 'height' | 'formats' | 'mime' | 'url'>
-      )>>> }
-    )> }
-  )>, contact?: Maybe<(
-    { __typename?: 'Contact' }
-    & { social?: Maybe<(
-      { __typename?: 'ComponentSocialSocial' }
-      & Pick<ComponentSocialSocial, 'facebook' | 'instagram' | 'youtube'>
-    )> }
-  )> }
+  & {
+    food?: Maybe<(
+      { __typename?: 'Food' }
+      & {
+        gallery?: Maybe<(
+          { __typename?: 'ComponentGalleryGallery' }
+          & {
+            photos?: Maybe<Array<Maybe<(
+              { __typename?: 'UploadFile' }
+              & Pick<UploadFile, 'name' | 'alternativeText' | 'caption' | 'width' | 'height' | 'formats' | 'mime' | 'url'>
+            )>>>
+          }
+        )>
+      }
+    )>, contact?: Maybe<(
+      { __typename?: 'Contact' }
+      & {
+        social?: Maybe<(
+          { __typename?: 'ComponentSocialSocial' }
+          & Pick<ComponentSocialSocial, 'facebook' | 'instagram' | 'youtube'>
+        )>
+      }
+    )>
+  }
 );
 
 
@@ -1040,11 +1043,11 @@ export const FoodGalleryDocument = gql`
  * });
  */
 export function useFoodGalleryQuery(baseOptions?: Apollo.QueryHookOptions<FoodGalleryQuery, FoodGalleryQueryVariables>) {
-        return Apollo.useQuery<FoodGalleryQuery, FoodGalleryQueryVariables>(FoodGalleryDocument, baseOptions);
-      }
+  return Apollo.useQuery<FoodGalleryQuery, FoodGalleryQueryVariables>(FoodGalleryDocument, baseOptions);
+}
 export function useFoodGalleryLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<FoodGalleryQuery, FoodGalleryQueryVariables>) {
-          return Apollo.useLazyQuery<FoodGalleryQuery, FoodGalleryQueryVariables>(FoodGalleryDocument, baseOptions);
-        }
+  return Apollo.useLazyQuery<FoodGalleryQuery, FoodGalleryQueryVariables>(FoodGalleryDocument, baseOptions);
+}
 export type FoodGalleryQueryHookResult = ReturnType<typeof useFoodGalleryQuery>;
 export type FoodGalleryLazyQueryHookResult = ReturnType<typeof useFoodGalleryLazyQuery>;
 export type FoodGalleryQueryResult = Apollo.QueryResult<FoodGalleryQuery, FoodGalleryQueryVariables>;

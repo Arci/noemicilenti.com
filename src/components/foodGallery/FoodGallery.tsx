@@ -32,7 +32,6 @@ const FoodGallery: React.FC<Props> = ({ data }) => {
     (a, b) => {
       const aOrdinal = getOrdinal(a?.name || '')
       const bOrdinal = getOrdinal(b?.name || '')
-      console.log(aOrdinal)
       if (aOrdinal > bOrdinal) { return 1; }
       if (aOrdinal < bOrdinal) { return -1; }
       return 0;
@@ -56,7 +55,7 @@ const FoodGallery: React.FC<Props> = ({ data }) => {
   )
 
   return (
-    <article className="content">
+    <>
       <Gallery photos={galleryImages} direction={"column"} onClick={openLightbox} />
       <ModalGateway>
         {viewerIsOpen && (
@@ -65,7 +64,7 @@ const FoodGallery: React.FC<Props> = ({ data }) => {
           </Modal>
         )}
       </ModalGateway>
-    </article>
+    </>
   )
 };
 

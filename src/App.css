@@ -1,14 +1,3 @@
-#root {
-  min-height: 100%;
-  background-color: #eaeaea;
-  color: #000000;
-}
-
-#root a:link, #root a:visited, #root a:hover, #root a:active {
-  color: inherit;
-  text-decoration: none;
-}
-
 @media only screen and (min-width: 992px) {
   #root {
     display: flex;
@@ -18,5 +7,15 @@
   }
   #root article.content {
     width: 85%;
+  }
+}
+
+article.content {
+  margin: 20px 0 20px 0;
+}
+
+@media only screen and (min-width: 992px) {
+  article.content {
+    margin-right: 20px;
   }
 }

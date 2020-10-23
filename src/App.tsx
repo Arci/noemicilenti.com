@@ -11,7 +11,9 @@ function App() {
         <Menu />
         <Contacts />
       </nav>
-      <FoodGallery />
+      <article className="content">
+        <FoodGallery />
+      </article>
     </>
   );
 }
