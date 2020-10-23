@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import Carousel, { Modal, ModalGateway } from 'react-images';
+import Carousel, { Modal, ModalGateway, ViewType } from 'react-images';
 import Gallery, { PhotoProps } from 'react-photo-gallery';
 import { FoodGalleryQuery } from '../../generated/graphql';
 import './styles.css';
@@ -40,18 +40,12 @@ const FoodGallery: React.FC<Props> = ({ data }) => {
         key: i.toString()
       }
     )
-  ) || [
-      {
-        src: '',
-        width: 0,
-        height: 0
-      }
-    ];
-  const carouselImages = galleryImages.map(x => ({
-    ...x,
-    source: x.src,
-    srcset: x.srcSet
-  }))
+  ) || [];
+  const carouselImages: ViewType[] = galleryImages.map(
+    image => (
+      { source: image.src }
+    )
+  )
 
   return (
     <article className="content">
