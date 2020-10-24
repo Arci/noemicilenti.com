@@ -12,7 +12,7 @@ const GridLoader: React.FC = () => {
   const components = []
   for (let index = 0; index < elements; index++) {
     components.push((
-      <SkeletonTheme color="#cacaca" highlightColor="#dad9d9">
+      <SkeletonTheme key={index} color="#cacaca" highlightColor="#dad9d9">
         <div><Skeleton height={getRandom(180, 500)} /></div>
       </SkeletonTheme>
     ))

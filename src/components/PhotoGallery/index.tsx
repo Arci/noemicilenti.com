@@ -59,7 +59,7 @@ const PhotoGallery: React.FC<Props> = ({ gallery }) => {
     )
   )
 
-  if (gallery.length == 0) return (<GridLoader />)
+  if (gallery.length === 0) return (<GridLoader />)
   else return (
     <>
       <Gallery photos={galleryImages} direction={"column"} onClick={openLightbox} />
