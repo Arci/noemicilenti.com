@@ -6,7 +6,7 @@ import { SocialsAdapter } from './adapters/SocialsAdapter';
 import { GalleryAdapter } from './adapters/GalleryAdapter';
 import Contacts from './components/Contacts';
 import Menu from './components/Menu';
-import PhotoGallery from './components/PhotoGallery/PhotoGallery';
+import PhotoGallery from './components/PhotoGallery';
 import './App.css'
 
 initGA('G-Z7QCPWVMCG');
