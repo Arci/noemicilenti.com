@@ -48,9 +48,10 @@ const App: React.FC = () => {
     <>
       <nav>
         <Menu />
+        <Contacts socials={[]} />
       </nav>
       <article className="content">
-        <div>Loading...</div>
+        <PhotoGallery gallery={[]} />
       </article>
     </>
   );
