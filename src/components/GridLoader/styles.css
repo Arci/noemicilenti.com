@@ -1,37 +1,43 @@
-article.content .grid {
+#root article .grid {
   column-count: 1;
 }
 
-article.content .grid {
+#root article .grid {
   column-gap: 4px;
 }
 
-article.content .grid div {
+#root article .grid div {
   width: 100%;
   height: auto;
   margin-bottom: 4px;
 }
 
 @media only screen and (min-width: 500px) {
-  article.content .grid {
+  #root article .grid {
     column-count: 2;
   }
 }
 
 @media only screen and (min-width: 900px) {
-  article.content .grid {
+  #root article .grid {
     column-count: 3;
   }
 }
 
 @media only screen and (min-width: 1000px) {
-  article.content .grid {
+  #root article .grid {
     column-count: 2;
   }
 }
 
 @media only screen and (min-width: 1100px) {
-  article.content .grid {
+  #root article .grid {
     column-count: 3;
+  }
+}
+
+@media only screen and (min-width: 1750px) {
+  #root article .grid {
+    column-count: 4;
   }
 }

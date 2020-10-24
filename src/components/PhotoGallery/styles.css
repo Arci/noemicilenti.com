@@ -1,9 +1,0 @@
-article.content {
-  margin: 20px 0 20px 0;
-}
-
-@media only screen and (min-width: 992px) {
-  article.content {
-    margin-right: 20px;
-  }
-}

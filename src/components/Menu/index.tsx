@@ -15,7 +15,7 @@ const Menu: React.FC = () => {
           <p>&copy; NC Photography</p>
         </a>
       </section>
-      <section id="links" className={isOpen ? 'links-open' : ''}>
+      <section id="links" className={isOpen ? 'open' : ''}>
         <ul>
           <li><a href="food.html">Food</a></li>
           <li><a href="events.html">Events</a></li>

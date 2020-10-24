@@ -50,7 +50,7 @@ const App: React.FC = () => {
         <Menu />
         <Contacts socials={[]} />
       </nav>
-      <article className="content">
+      <article>
         <PhotoGallery gallery={[]} />
       </article>
     </>
@@ -60,7 +60,7 @@ const App: React.FC = () => {
       <nav>
         <Menu />
       </nav>
-      <article className="content">
+      <article>
         <div>Error! ${error.message}</div>
       </article>
     </>
@@ -71,7 +71,7 @@ const App: React.FC = () => {
         <Menu />
         <Contacts socials={new SocialsAdapter().adapt(data)} />
       </nav>
-      <article className="content">
+      <article>
         <PhotoGallery gallery={new GalleryAdapter().adapt(data)} />
       </article>
     </>
