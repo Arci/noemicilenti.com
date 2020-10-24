@@ -1,0 +1,10 @@
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# production
+/build
+
+# Node.js
+package-lock.json

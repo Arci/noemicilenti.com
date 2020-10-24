@@ -1,0 +1,7 @@
+.env
+
+# Strapi
+exports
+.cache
+build
+public/uploads

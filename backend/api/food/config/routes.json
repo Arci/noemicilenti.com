@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/food",
+      "handler": "food.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/food",
+      "handler": "food.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/food",
+      "handler": "food.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
