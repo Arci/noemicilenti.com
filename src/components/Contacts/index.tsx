@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { useFoodGalleryQuery } from '../../generated/graphql';
-import Contacts from './Contacts';
+import { FoodGalleryQuery, useFoodGalleryQuery } from '../../generated/graphql';
+import Contacts, { Social } from './Contacts';
 
 const FoodGalleryContainer = () => {
   const { data, error, loading } = useFoodGalleryQuery();
@@ -13,7 +13,34 @@ const FoodGalleryContainer = () => {
     return <div>ERROR</div>;
   }
 
-  return <Contacts data={data} />;
+  return <Contacts socials={new SocialsAdapter().adapt(data)} />;
 };
+
+class SocialsAdapter {
+  adapt(data: FoodGalleryQuery): Social[] {
+    const socials = data?.contact?.social
+    const result = []
+    if (socials?.facebook) {
+      result.push({
+        url: socials.facebook,
+        name: "facebook"
+      })
+    }
+    if (socials?.instagram) {
+      result.push({
+        url: socials.instagram,
+        name: "instagram"
+      })
+    }
+    if (socials?.youtube) {
+      result.push({
+        url: socials.youtube,
+        name: "youtube"
+      })
+    }
+    return result
+  }
+}
+
 
 export default FoodGalleryContainer;
