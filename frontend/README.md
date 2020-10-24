@@ -16,8 +16,6 @@ Launches the test runner in the interactive watch mode.
 
 Builds the app for production to the `build` folder.
 
-The build is minified and the filenames include the hashes.
-
 ### `yarn codegen`
 
 Generates Typescript data types based on the GraphQL schema.

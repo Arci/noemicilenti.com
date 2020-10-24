@@ -21,8 +21,6 @@ Runs the app in the development mode at [http://localhost:1337](http://localhost
 
 Builds the app for production to the `build` folder.
 
-The build is minified and the filenames include the hashes.
-
 ### `yarn deploy`
 
 Deploy the application to heroku, see [Deploy](#Deploy).
