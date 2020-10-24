@@ -5,7 +5,7 @@ Backend for [noemicilenti.com](https://noemicilenti.com) based on [strapi](https
 ## Development variables
 
 Create an `.env` file:
-```bash
+```console
 cp .env.template .env
 ```
 
@@ -62,11 +62,11 @@ query {
 ## Heroku
 
 Push the changes using subtree prefix:
-```bash
+```console
 git subtree push --prefix backend heroku master
 ```
 
 To add Heroku remote:
-```bash
+```console
 heroku git:remote -a my-app
 ```
