@@ -17,7 +17,7 @@ const FoodGalleryContainer = () => {
 };
 
 
-class GalleryAdapter {
+export class GalleryAdapter {
   adapt(data: FoodGalleryQuery): Photo[] {
     const photos = data?.food?.gallery?.photos || []
     const adapted: Photo[] = photos.flatMap(photo => {

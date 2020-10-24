@@ -16,7 +16,7 @@ const FoodGalleryContainer = () => {
   return <Contacts socials={new SocialsAdapter().adapt(data)} />;
 };
 
-class SocialsAdapter {
+export class SocialsAdapter {
   adapt(data: FoodGalleryQuery): Social[] {
     const socials = data?.contact?.social
     const result = []
