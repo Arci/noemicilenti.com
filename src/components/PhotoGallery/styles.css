@@ -7,38 +7,3 @@ article.content {
     margin-right: 20px;
   }
 }
-
-article.content .grid {
-  margin: 0 20px 20px 20px;
-  line-height: 0;
-  column-count: 1;
-}
-article.content .grid div {
-  width: 100%;
-  height: auto;
-  margin-bottom: 5px;
-}
-@media only screen and (min-width: 768px) {
-  article.content .grid {
-    column-gap: 5px;
-  }
-}
-@media only screen and (min-width: 992px) {
-  article.content .grid {
-    margin-right: 20px;
-    column-count: 3;
-    column-gap: 7px;
-  }
-  article.content .grid div {
-    margin-bottom: 7px;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  article.content .grid {
-    column-count: 4;
-    column-gap: 9px;
-  }
-  article.content .grid div {
-    margin-bottom: 9px;
-  }
-}

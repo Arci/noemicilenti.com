@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from 'react';
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import Gallery, { PhotoProps } from 'react-photo-gallery';
 import Carousel, { Modal, ModalGateway, ViewType } from 'react-images';
 import './styles.css';
+import GridLoader from '../GridLoader';
 
 export interface Photo {
   name: string
@@ -59,24 +59,7 @@ const PhotoGallery: React.FC<Props> = ({ gallery }) => {
     )
   )
 
-  const getRandom = (min: number, max: number) => {
-    return Math.random() * (max - min) + min;
-  }
-
-  if (gallery.length == 0) {
-    const components = []
-    const rectNumber = 20
-    for (let index = 0; index < rectNumber; index++) {
-      components.push((
-        <SkeletonTheme color="#cacaca" highlightColor="#dad9d9">
-          <div><Skeleton height={getRandom(180, 500)} /></div>
-        </SkeletonTheme>
-      ))
-    }
-    return (
-      <div className="grid">{components}</div>
-    )
-  }
+  if (gallery.length == 0) return (<GridLoader />)
   else return (
     <>
       <Gallery photos={galleryImages} direction={"column"} onClick={openLightbox} />
