@@ -963,6 +963,12 @@ export type MutationEmailConfirmationArgs = {
   confirmation: Scalars['String'];
 };
 
+
+
+
+
+
+
 export enum CacheControlScope {
   Public = 'PUBLIC',
   Private = 'PRIVATE'
@@ -973,30 +979,22 @@ export type DataQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type DataQuery = (
   { __typename?: 'Query' }
-  & {
-    food?: Maybe<(
-      { __typename?: 'Food' }
-      & {
-        gallery?: Maybe<(
-          { __typename?: 'ComponentGalleryGallery' }
-          & {
-            photos?: Maybe<Array<Maybe<(
-              { __typename?: 'UploadFile' }
-              & Pick<UploadFile, 'name' | 'alternativeText' | 'caption' | 'width' | 'height' | 'formats' | 'mime' | 'url'>
-            )>>>
-          }
-        )>
-      }
-    )>, contact?: Maybe<(
-      { __typename?: 'Contact' }
-      & {
-        social?: Maybe<(
-          { __typename?: 'ComponentSocialSocial' }
-          & Pick<ComponentSocialSocial, 'facebook' | 'instagram' | 'youtube'>
-        )>
-      }
-    )>
-  }
+  & { food?: Maybe<(
+    { __typename?: 'Food' }
+    & { gallery?: Maybe<(
+      { __typename?: 'ComponentGalleryGallery' }
+      & { photos?: Maybe<Array<Maybe<(
+        { __typename?: 'UploadFile' }
+        & Pick<UploadFile, 'name' | 'alternativeText' | 'caption' | 'width' | 'height' | 'formats' | 'mime' | 'url'>
+      )>>> }
+    )> }
+  )>, contact?: Maybe<(
+    { __typename?: 'Contact' }
+    & { social?: Maybe<(
+      { __typename?: 'ComponentSocialSocial' }
+      & Pick<ComponentSocialSocial, 'facebook' | 'instagram' | 'youtube'>
+    )> }
+  )> }
 );
 
 
@@ -1042,11 +1040,11 @@ export const DataDocument = gql`
  * });
  */
 export function useDataQuery(baseOptions?: Apollo.QueryHookOptions<DataQuery, DataQueryVariables>) {
-  return Apollo.useQuery<DataQuery, DataQueryVariables>(DataDocument, baseOptions);
-}
+        return Apollo.useQuery<DataQuery, DataQueryVariables>(DataDocument, baseOptions);
+      }
 export function useDataLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<DataQuery, DataQueryVariables>) {
-  return Apollo.useLazyQuery<DataQuery, DataQueryVariables>(DataDocument, baseOptions);
-}
+          return Apollo.useLazyQuery<DataQuery, DataQueryVariables>(DataDocument, baseOptions);
+        }
 export type DataQueryHookResult = ReturnType<typeof useDataQuery>;
 export type DataLazyQueryHookResult = ReturnType<typeof useDataLazyQuery>;
 export type DataQueryResult = Apollo.QueryResult<DataQuery, DataQueryVariables>;
