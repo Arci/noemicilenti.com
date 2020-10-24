@@ -1,12 +1,12 @@
 import React from 'react';
-import { Social } from '../../domain/data';
+import { SocialNetwork } from '../../domain/data';
 import './styles.css';
 
 interface Props {
-  socials: Social[];
+  socials: SocialNetwork[];
 }
 
-const Contacts: React.FC<Props> = ({ socials }) => (
+const Social: React.FC<Props> = ({ socials }) => (
   <section id="social">
     <ul>
       {socials.map((social, i) => (
@@ -20,4 +20,4 @@ const Contacts: React.FC<Props> = ({ socials }) => (
   </section>
 );
 
-export default Contacts
+export default Social

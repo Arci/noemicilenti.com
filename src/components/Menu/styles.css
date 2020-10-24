@@ -14,7 +14,7 @@
   cursor: pointer;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1025px) {
   #hamburger {
     display: none;
   }
@@ -24,7 +24,7 @@ nav {
   margin-top: 20px;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1025px) {
   nav {
     margin-left: 20px;
   }
@@ -34,7 +34,7 @@ nav section {
   text-align: center;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1025px) {
   nav section {
     text-align: left;
   }
@@ -51,7 +51,7 @@ nav section {
   font-size: 1.3em;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1025px) {
   #logo {
     margin-bottom: 0;
   }
@@ -78,7 +78,7 @@ nav section {
   transition-timing-function: ease-in;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1025px) {
   #links {
     margin-top: 40px;
     background-color: #eaeaea;
@@ -93,7 +93,7 @@ nav section {
   padding: 10px 0;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1025px) {
   #links ul li {
     padding-top: 20px;
     padding-bottom: 0;

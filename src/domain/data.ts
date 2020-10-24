@@ -19,7 +19,7 @@ export interface Format {
   height: number;
 }
 
-export interface Social {
+export interface SocialNetwork {
   url: string;
   name: string;
 }

@@ -4,8 +4,8 @@ import { useQuery } from '@apollo/client';
 import { initGA, trackPageView } from './components/Tracking';
 import { SocialsAdapter } from './adapters/SocialsAdapter';
 import { GalleryAdapter } from './adapters/GalleryAdapter';
-import Contacts from './components/Contacts';
 import Menu from './components/Menu';
+import Social from './components/Social';
 import PhotoGallery from './components/PhotoGallery';
 import './App.css'
 
@@ -48,7 +48,7 @@ const App: React.FC = () => {
     <>
       <nav>
         <Menu />
-        <Contacts socials={[]} />
+        <Social socials={[]} />
       </nav>
       <article>
         <PhotoGallery gallery={[]} />
@@ -69,7 +69,7 @@ const App: React.FC = () => {
     <>
       <nav>
         <Menu />
-        <Contacts socials={new SocialsAdapter().adapt(data)} />
+        <Social socials={new SocialsAdapter().adapt(data)} />
       </nav>
       <article>
         <PhotoGallery gallery={new GalleryAdapter().adapt(data)} />

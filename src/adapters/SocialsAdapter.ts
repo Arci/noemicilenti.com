@@ -1,8 +1,8 @@
-import { Social } from '../domain/data';
+import { SocialNetwork } from '../domain/data';
 import { DataQuery } from '../generated/graphql';
 
 export class SocialsAdapter {
-  adapt(data: DataQuery): Social[] {
+  adapt(data: DataQuery): SocialNetwork[] {
     const socials = data?.contact?.social
     const result = []
     if (socials?.facebook) {

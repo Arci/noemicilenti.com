@@ -4,7 +4,7 @@ import './styles.css';
 
 const GridLoader: React.FC = () => {
 
-  const getRandom = (min: number, max: number) => {
+  const randomBetween = (min: number, max: number) => {
     return Math.random() * (max - min) + min;
   }
 
@@ -13,7 +13,7 @@ const GridLoader: React.FC = () => {
   for (let index = 0; index < elements; index++) {
     components.push((
       <SkeletonTheme key={index} color="#cacaca" highlightColor="#dad9d9">
-        <div><Skeleton height={getRandom(180, 500)} /></div>
+        <div><Skeleton height={randomBetween(180, 500)} /></div>
       </SkeletonTheme>
     ))
   }
