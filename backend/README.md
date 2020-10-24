@@ -2,7 +2,7 @@
 
 Backend for [noemicilenti.com](https://noemicilenti.com) based on [strapi](https://strapi.io/)
 
-## Development variables
+# Develop
 
 Create an `.env` file:
 ```console
