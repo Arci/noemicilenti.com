@@ -23,6 +23,10 @@ Builds the app for production to the `build` folder.
 
 The build is minified and the filenames include the hashes.
 
+### `yarn deploy`
+
+Deploy the application to heroku, see [Deploy](#Deploy).
+
 # Query data
 
 content can be queried via GraphQL at `/graphql`
