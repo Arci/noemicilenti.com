@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
-import Carousel, { Modal, ModalGateway, ViewType } from 'react-images';
 import Gallery, { PhotoProps } from 'react-photo-gallery';
+import Carousel, { Modal, ModalGateway, ViewType } from 'react-images';
 import './styles.css';
 
 export interface Photo {

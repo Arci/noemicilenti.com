@@ -1,6 +1,6 @@
 overwrite: true
 schema: "https://noemicilenti.herokuapp.com/graphql"
-documents: "./src/components/**/*.{ts,tsx}"
+documents: "./src/**/*.{ts,tsx}"
 generates:
   src/generated/graphql.tsx:
     plugins:

@@ -4,13 +4,9 @@ import './styles.css';
 const Menu: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const clickHandler = (): void => {
-    setIsOpen(!isOpen)
-  };
-
   return (
     <>
-      <nav id="hamburger" onClick={clickHandler}>
+      <nav id="hamburger" onClick={() => setIsOpen(!isOpen)}>
         <img src="https://noemicilenti.com/img/hamburger.png" alt="menu" />
       </nav>
       <section id="logo">

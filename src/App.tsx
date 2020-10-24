@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
+import gql from 'graphql-tag';
+import { useQuery } from '@apollo/client';
 import { initGA, trackPageView } from './components/Tracking';
-import Contacts from './components/Contacts/Contacts';
+import { SocialsAdapter } from './adapters/SocialsAdapter';
+import { GalleryAdapter } from './adapters/GalleryAdapter';
+import Contacts from './components/Contacts';
 import Menu from './components/Menu';
 import PhotoGallery from './components/PhotoGallery/PhotoGallery';
-import { useQuery } from '@apollo/client';
-import gql from 'graphql-tag';
 import './App.css'
-import { SocialsAdapter } from './components/Contacts';
-import { GalleryAdapter } from './components/PhotoGallery';
 
 initGA('G-Z7QCPWVMCG');
 
 const GET_DATA = gql`
-  query FoodGallery {
+  query Data {
     food {
       gallery {
         photos {
@@ -36,7 +36,6 @@ const GET_DATA = gql`
     }
   }
 `;
-
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -72,7 +71,7 @@ const App: React.FC = () => {
         <Contacts socials={new SocialsAdapter().adapt(data)} />
       </nav>
       <article className="content">
-        <PhotoGallery gallery={new GalleryAdapter().adapt(data)}/>
+        <PhotoGallery gallery={new GalleryAdapter().adapt(data)} />
       </article>
     </>
   );

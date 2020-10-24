@@ -1,24 +1,8 @@
-import * as React from 'react';
-import { FoodGalleryQuery, useFoodGalleryQuery } from '../../generated/graphql';
-import PhotoGallery, { Photo } from './PhotoGallery';
-
-const FoodGalleryContainer = () => {
-  const { data, error, loading } = useFoodGalleryQuery();
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error || !data) {
-    return <div>ERROR</div>;
-  }
-
-  return <PhotoGallery gallery={new GalleryAdapter().adapt(data)} />;
-};
-
+import { DataQuery } from '../generated/graphql';
+import { Photo } from '../components/PhotoGallery/PhotoGallery';
 
 export class GalleryAdapter {
-  adapt(data: FoodGalleryQuery): Photo[] {
+  adapt(data: DataQuery): Photo[] {
     const photos = data?.food?.gallery?.photos || []
     const adapted: Photo[] = photos.flatMap(photo => {
       if (photo) {
@@ -66,5 +50,3 @@ export class GalleryAdapter {
     )
   }
 }
-
-export default FoodGalleryContainer;

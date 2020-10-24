@@ -963,16 +963,15 @@ export type MutationEmailConfirmationArgs = {
   confirmation: Scalars['String'];
 };
 
-
 export enum CacheControlScope {
   Public = 'PUBLIC',
   Private = 'PRIVATE'
 }
 
-export type FoodGalleryQueryVariables = Exact<{ [key: string]: never; }>;
+export type DataQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type FoodGalleryQuery = (
+export type DataQuery = (
   { __typename?: 'Query' }
   & {
     food?: Maybe<(
@@ -1001,8 +1000,8 @@ export type FoodGalleryQuery = (
 );
 
 
-export const FoodGalleryDocument = gql`
-    query FoodGallery {
+export const DataDocument = gql`
+    query Data {
   food {
     gallery {
       photos {
@@ -1028,26 +1027,26 @@ export const FoodGalleryDocument = gql`
     `;
 
 /**
- * __useFoodGalleryQuery__
+ * __useDataQuery__
  *
- * To run a query within a React component, call `useFoodGalleryQuery` and pass it any options that fit your needs.
- * When your component renders, `useFoodGalleryQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useDataQuery` and pass it any options that fit your needs.
+ * When your component renders, `useDataQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useFoodGalleryQuery({
+ * const { data, loading, error } = useDataQuery({
  *   variables: {
  *   },
  * });
  */
-export function useFoodGalleryQuery(baseOptions?: Apollo.QueryHookOptions<FoodGalleryQuery, FoodGalleryQueryVariables>) {
-  return Apollo.useQuery<FoodGalleryQuery, FoodGalleryQueryVariables>(FoodGalleryDocument, baseOptions);
+export function useDataQuery(baseOptions?: Apollo.QueryHookOptions<DataQuery, DataQueryVariables>) {
+  return Apollo.useQuery<DataQuery, DataQueryVariables>(DataDocument, baseOptions);
 }
-export function useFoodGalleryLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<FoodGalleryQuery, FoodGalleryQueryVariables>) {
-  return Apollo.useLazyQuery<FoodGalleryQuery, FoodGalleryQueryVariables>(FoodGalleryDocument, baseOptions);
+export function useDataLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<DataQuery, DataQueryVariables>) {
+  return Apollo.useLazyQuery<DataQuery, DataQueryVariables>(DataDocument, baseOptions);
 }
-export type FoodGalleryQueryHookResult = ReturnType<typeof useFoodGalleryQuery>;
-export type FoodGalleryLazyQueryHookResult = ReturnType<typeof useFoodGalleryLazyQuery>;
-export type FoodGalleryQueryResult = Apollo.QueryResult<FoodGalleryQuery, FoodGalleryQueryVariables>;
+export type DataQueryHookResult = ReturnType<typeof useDataQuery>;
+export type DataLazyQueryHookResult = ReturnType<typeof useDataLazyQuery>;
+export type DataQueryResult = Apollo.QueryResult<DataQuery, DataQueryVariables>;

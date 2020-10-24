@@ -1,46 +1,27 @@
-import * as React from 'react';
-import { FoodGalleryQuery, useFoodGalleryQuery } from '../../generated/graphql';
-import Contacts, { Social } from './Contacts';
+import React from 'react';
+import './styles.css';
 
-const FoodGalleryContainer = () => {
-  const { data, error, loading } = useFoodGalleryQuery();
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error || !data) {
-    return <div>ERROR</div>;
-  }
-
-  return <Contacts socials={new SocialsAdapter().adapt(data)} />;
-};
-
-export class SocialsAdapter {
-  adapt(data: FoodGalleryQuery): Social[] {
-    const socials = data?.contact?.social
-    const result = []
-    if (socials?.facebook) {
-      result.push({
-        url: socials.facebook,
-        name: "facebook"
-      })
-    }
-    if (socials?.instagram) {
-      result.push({
-        url: socials.instagram,
-        name: "instagram"
-      })
-    }
-    if (socials?.youtube) {
-      result.push({
-        url: socials.youtube,
-        name: "youtube"
-      })
-    }
-    return result
-  }
+export interface Social {
+  url: string;
+  name: string;
 }
 
+interface Props {
+  socials: Social[];
+}
 
-export default FoodGalleryContainer;
+const Contacts: React.FC<Props> = ({ socials }) => (
+  <section id="social">
+    <ul>
+      {socials.map((social, i) => (
+        <li key={i} className={social.name}>
+          <a href={social.url} target="_blank" rel="noopener noreferrer">
+            <img src={`https://noemicilenti.com/img/social/${social.name}.png`} alt={social.name} />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+);
+
+export default Contacts
