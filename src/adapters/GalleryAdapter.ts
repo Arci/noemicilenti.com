@@ -1,5 +1,5 @@
+import { Photo } from '../domain/data';
 import { DataQuery } from '../generated/graphql';
-import { Photo } from '../components/PhotoGallery';
 
 export class GalleryAdapter {
   adapt(data: DataQuery): Photo[] {

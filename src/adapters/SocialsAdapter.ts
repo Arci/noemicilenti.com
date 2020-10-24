@@ -1,5 +1,5 @@
+import { Social } from '../domain/data';
 import { DataQuery } from '../generated/graphql';
-import { Social } from '../components/Contacts';
 
 export class SocialsAdapter {
   adapt(data: DataQuery): Social[] {

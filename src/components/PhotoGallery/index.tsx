@@ -1,26 +1,8 @@
 import React, { useCallback, useState } from 'react';
 import Gallery, { PhotoProps } from 'react-photo-gallery';
 import Carousel, { Modal, ModalGateway, ViewType } from 'react-images';
+import { Photo } from '../../domain/data';
 import GridLoader from '../GridLoader';
-
-export interface Photo {
-  name: string
-  url: string;
-  alternativeText?: string | null;
-  caption?: string | null;
-  width: number;
-  height: number;
-  formats: Formats;
-}
-export interface Formats {
-  small: Format
-  thumbnail: Format
-}
-export interface Format {
-  url: string;
-  width: number;
-  height: number;
-}
 
 interface Props {
   gallery: Photo[];

@@ -1,10 +1,6 @@
 import React from 'react';
+import { Social } from '../../domain/data';
 import './styles.css';
-
-export interface Social {
-  url: string;
-  name: string;
-}
 
 interface Props {
   socials: Social[];
