@@ -2,6 +2,15 @@
 
 Backend for [noemicilenti.com](https://noemicilenti.com) based on [strapi](https://strapi.io/)
 
+## Development variables
+
+Create an `.env` file:
+```bash
+cp .env.template .env
+```
+
+and fill with correct data.
+
 ## Available Scripts
 
 ### `yarn start`
@@ -46,4 +55,18 @@ query {
     }
   }
 }
+```
+
+# Deploy
+
+## Heroku
+
+Push the changes using subtree prefix:
+```bash
+git subtree push --prefix backend heroku master
+```
+
+To add Heroku remote:
+```bash
+heroku git:remote -a my-app
 ```
