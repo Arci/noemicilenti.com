@@ -13,7 +13,7 @@ and fill with correct data.
 
 ## Available Scripts
 
-### `yarn start`
+### `yarn develop`
 
 Runs the app in the development mode at [http://localhost:1337](http://localhost:1337).
 
