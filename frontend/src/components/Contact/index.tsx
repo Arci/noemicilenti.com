@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 import React from 'react';
 import { ContactInfo } from '../../domain/data';
 import './styles.css';
@@ -13,7 +14,7 @@ const Contact: React.FC<Props> = ({ info }) => (
         <img src={info.cover.url} alt="cover" />
       </section>
     )}
-    <section className="description">{info.description}</section>
+    <section className="description" dangerouslySetInnerHTML={{ __html: info.description }} />
     <hr />
     <section className="social">
       <p>
