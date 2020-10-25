@@ -2,24 +2,24 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/social-network",
-      "handler": "social-network.find",
+      "path": "/social",
+      "handler": "social.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/social-network",
-      "handler": "social-network.update",
+      "path": "/social",
+      "handler": "social.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/social-network",
-      "handler": "social-network.delete",
+      "path": "/social",
+      "handler": "social.delete",
       "config": {
         "policies": []
       }

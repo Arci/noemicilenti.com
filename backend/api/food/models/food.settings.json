@@ -2,8 +2,7 @@
   "kind": "singleType",
   "collectionName": "foods",
   "info": {
-    "name": "food",
-    "description": ""
+    "name": "food"
   },
   "options": {
     "increments": true,
@@ -11,7 +10,7 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "photos": {
+    "gallery": {
       "collection": "file",
       "via": "related",
       "allowedTypes": [

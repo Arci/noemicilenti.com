@@ -1,9 +1,8 @@
 {
   "kind": "singleType",
-  "collectionName": "social_networks",
+  "collectionName": "socials",
   "info": {
-    "name": "socials",
-    "description": ""
+    "name": "social"
   },
   "options": {
     "increments": true,

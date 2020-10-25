@@ -29,36 +29,6 @@ Deploy the application to heroku, see [Deploy](#Deploy).
 
 content can be queried via GraphQL at `/graphql`
 
-## Exmple query
-
-```graphql
-query {
-  food {
-    gallery {
-      photos {
-        name
-        alternativeText
-        caption
-        width
-        height
-        formats
-        mime
-        url
-      }
-    }
-  }
-  contact {
-    email
-    phone
-    social {
-      facebook
-      instagram
-      vogue
-    }
-  }
-}
-```
-
 # Deploy
 
 ## Heroku

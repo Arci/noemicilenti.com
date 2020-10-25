@@ -1,6 +1,6 @@
 {
   "kind": "singleType",
-  "collectionName": "contacts",
+  "collectionName": "contact",
   "info": {
     "name": "contact",
     "description": ""
