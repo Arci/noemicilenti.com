@@ -17,16 +17,16 @@ class SocialNetworksAdapter {
         name: 'instagram',
       });
     }
-    if (socials?.youtube) {
-      result.push({
-        url: socials.youtube,
-        name: 'youtube',
-      });
-    }
     if (socials?.vogue) {
       result.push({
         url: socials.vogue,
         name: 'vogue',
+      });
+    }
+    if (socials?.youtube) {
+      result.push({
+        url: socials.youtube,
+        name: 'youtube',
       });
     }
     return result;

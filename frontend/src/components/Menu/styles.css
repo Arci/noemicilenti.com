@@ -51,7 +51,7 @@
 }
 
 #social ul li {
-  width: 15px;
+  width: 17px;
   margin: 0 8px;
 }
 
@@ -66,6 +66,10 @@
 
   #social ul {
     justify-content: start;
+  }
+
+  #social ul li {
+    margin: 0 9.5px;
   }
 
   #social ul li:first-of-type{
