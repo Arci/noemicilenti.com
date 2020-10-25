@@ -1,7 +1,7 @@
 import { SocialNetwork } from '../domain/data';
 import { DataQuery } from '../generated/graphql';
 
-export class SocialsAdapter {
+export class SocialsNetworksAdapter {
   adapt(data: DataQuery): SocialNetwork[] {
     const socials = data?.contact?.social
     const result = []

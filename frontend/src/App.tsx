@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/client';
 import { initGA, trackPageView } from './components/Tracking';
-import { SocialsAdapter } from './adapters/SocialsAdapter';
+import { SocialsNetworksAdapter as SocialNetworksAdapter } from './adapters/SocialsNetworksAdapter';
 import { GalleryAdapter } from './adapters/GalleryAdapter';
 import Menu from './components/Menu';
 import Contact from './components/Contact';
@@ -89,7 +89,7 @@ const App: React.FC = () => {
   return (
     <>
       <nav>
-        <Menu socialNetworks={new SocialsAdapter().adapt(data)} />
+        <Menu socialNetworks={new SocialNetworksAdapter().adapt(data)} />
       </nav>
       <article>
         <Route path="/food">
