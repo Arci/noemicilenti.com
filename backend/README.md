@@ -72,3 +72,12 @@ To add Heroku remote:
 ```console
 heroku git:remote -a my-app
 ```
+
+### Database
+
+To reset the Postgres database on heroku:
+
+```console
+heroku restart
+heroku pg:reset DATABASE
+```
