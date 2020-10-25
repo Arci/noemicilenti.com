@@ -11,7 +11,7 @@ const wakeUpDyno = async (url) => {
 }
 
 module.exports = {
-  '* * * * *': () => {
+  '*/20 * * * *': () => {
     wakeUpDyno("https://noemicilenti.herokuapp.com")
   }
 }
