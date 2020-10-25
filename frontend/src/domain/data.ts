@@ -23,3 +23,10 @@ export interface SocialNetwork {
   url: string;
   name: string;
 }
+
+export interface ContactInfo {
+  cover?: Photo;
+  description: string;
+  email: string;
+  phone: string;
+}

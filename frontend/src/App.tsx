@@ -4,6 +4,7 @@ import gql from 'graphql-tag';
 import { useQuery } from '@apollo/client';
 import { initGA, trackPageView } from './components/Tracking';
 import SocialNetworksAdapter from './adapters/SocialNetworksAdapter';
+import ContactInfoAdapter from './adapters/ContactInfoAdapter';
 import GalleryAdapter from './adapters/GalleryAdapter';
 import Menu from './components/Menu';
 import Contact from './components/Contact';
@@ -54,6 +55,7 @@ const GET_DATA = gql`
 
 const socialNetworksAdapter = new SocialNetworksAdapter();
 const galleryAdapter = new GalleryAdapter();
+const contactInfoAdapter = new ContactInfoAdapter();
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -106,7 +108,7 @@ const App: React.FC = () => {
           <PhotoGallery gallery={galleryAdapter.adapt('portraits', data)} />
         </Route>
         <Route path="/contact">
-          <Contact />
+          <Contact info={contactInfoAdapter.adapt(data)} />
         </Route>
       </article>
     </>

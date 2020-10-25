@@ -1,6 +1,12 @@
 import React from 'react';
+import { ContactInfo } from '../../domain/data';
+import './styles.css';
 
-const Contact: React.FC = () => (
+interface Props {
+  info: ContactInfo;
+}
+
+const Contact: React.FC<Props> = () => (
   <h1>contacts</h1>
 );
 
