@@ -2,7 +2,8 @@
   "kind": "singleType",
   "collectionName": "events",
   "info": {
-    "name": "events"
+    "name": "events",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -10,10 +11,16 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "gallery": {
-      "type": "component",
-      "repeatable": false,
-      "component": "component.gallery"
+    "photos": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }

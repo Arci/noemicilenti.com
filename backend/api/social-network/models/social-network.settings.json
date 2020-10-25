@@ -11,10 +11,17 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "socialNetworks": {
-      "type": "component",
-      "repeatable": false,
-      "component": "component.social"
+    "facebook": {
+      "type": "string"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "youtube": {
+      "type": "string"
+    },
+    "vogue": {
+      "type": "string"
     }
   }
 }
