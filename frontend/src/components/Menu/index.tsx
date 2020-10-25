@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { SocialNetwork } from '../../domain/data';
 import './styles.css';
 
-const Menu: React.FC = () => {
+interface Props {
+  socials: SocialNetwork[];
+}
+
+const Menu: React.FC<Props> = ({ socials }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -21,6 +26,17 @@ const Menu: React.FC = () => {
           <li><Link to="live">Live</Link></li>
           <li><Link to="portraits">Portraits</Link></li>
           <li><Link to="contact">Contact</Link></li>
+        </ul>
+      </section>
+      <section id="social">
+        <ul>
+          {socials.map((social, i) => (
+            <li key={i} className={social.name}>
+              <a href={social.url} target="_blank" rel="noopener noreferrer">
+                <img src={`https://noemicilenti.com/img/social/${social.name}.png`} alt={social.name} />
+              </a>
+            </li>
+          ))}
         </ul>
       </section>
     </>

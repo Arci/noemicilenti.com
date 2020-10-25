@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
+import { Route } from 'react-router-dom';
 import gql from 'graphql-tag';
-import { DataQuery } from './generated/graphql';
 import { useQuery } from '@apollo/client';
-import { Route, Switch } from 'react-router-dom';
 import { initGA, trackPageView } from './components/Tracking';
 import { SocialsAdapter } from './adapters/SocialsAdapter';
 import { GalleryAdapter } from './adapters/GalleryAdapter';
 import Menu from './components/Menu';
-import Social from './components/Social';
 import Contact from './components/Contact';
 import PhotoGallery from './components/PhotoGallery';
 import './App.css'
@@ -52,7 +50,7 @@ const GET_DATA = gql`
       alternativeText
       caption
       width
-      heights
+      height
       formats
       mime
       url
@@ -70,8 +68,7 @@ const App: React.FC = () => {
   if (loading) return (
     <>
       <nav>
-        <Menu />
-        <Social socials={[]} />
+        <Menu socials={[]} />
       </nav>
       <article>
         <PhotoGallery gallery={[]} />
@@ -81,7 +78,7 @@ const App: React.FC = () => {
   if (error) return (
     <>
       <nav>
-        <Menu />
+        <Menu socials={[]} />
       </nav>
       <article>
         {/* TODO style this */}
@@ -92,8 +89,7 @@ const App: React.FC = () => {
   return (
     <>
       <nav>
-        <Menu />
-        <Social socials={new SocialsAdapter().adapt(data)} />
+        <Menu socials={new SocialsAdapter().adapt(data)} />
       </nav>
       <article>
         <Route path="/food">
