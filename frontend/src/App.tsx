@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import gql from 'graphql-tag';
+import { DataQuery } from './generated/graphql';
 import { useQuery } from '@apollo/client';
 import { Route, Switch } from 'react-router-dom';
 import { initGA, trackPageView } from './components/Tracking';
@@ -7,6 +8,7 @@ import { SocialsAdapter } from './adapters/SocialsAdapter';
 import { GalleryAdapter } from './adapters/GalleryAdapter';
 import Menu from './components/Menu';
 import Social from './components/Social';
+import Contact from './components/Contact';
 import PhotoGallery from './components/PhotoGallery';
 import './App.css'
 
@@ -93,23 +95,21 @@ const App: React.FC = () => {
         <Social socials={new SocialsAdapter().adapt(data)} />
       </nav>
       <article>
-        <Switch>
-          <Route path="/food">
-            <PhotoGallery gallery={new GalleryAdapter().adapt("/food", data)} />
-          </Route>
-          <Route path="/events">
-            <PhotoGallery gallery={new GalleryAdapter().adapt("/events", data)} />
-          </Route>
-          <Route path="/live">
-            <PhotoGallery gallery={new GalleryAdapter().adapt("/live", data)} />
-          </Route>
-          <Route path="/portraits">
-            <PhotoGallery gallery={new GalleryAdapter().adapt("/portraits", data)} />
-          </Route>
-          <Route path="/contact">
-            <h1>contacts</h1>
-          </Route>
-        </Switch>
+        <Route path="/food">
+          <PhotoGallery gallery={new GalleryAdapter().adapt("food", data)} />
+        </Route>
+        <Route path="/events">
+          <PhotoGallery gallery={new GalleryAdapter().adapt("events", data)} />
+        </Route>
+        <Route path="/live">
+          <PhotoGallery gallery={new GalleryAdapter().adapt("live", data)} />
+        </Route>
+        <Route path="/portraits">
+          <PhotoGallery gallery={new GalleryAdapter().adapt("portraits", data)} />
+        </Route>
+        <Route path="/contact">
+          <Contact />
+        </Route>
       </article>
     </>
   );
