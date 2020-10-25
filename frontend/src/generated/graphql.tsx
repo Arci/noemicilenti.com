@@ -119,6 +119,43 @@ export type DeleteContactPayload = {
   contact?: Maybe<Contact>;
 };
 
+export type Events = {
+  __typename?: 'Events';
+  id: Scalars['ID'];
+  created_at: Scalars['DateTime'];
+  updated_at: Scalars['DateTime'];
+  gallery?: Maybe<ComponentGalleryGallery>;
+  published_at?: Maybe<Scalars['DateTime']>;
+};
+
+export type EventInput = {
+  gallery?: Maybe<ComponentGalleryGalleryInput>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type EditEventInput = {
+  gallery?: Maybe<EditComponentGalleryGalleryInput>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type UpdateEventInput = {
+  data?: Maybe<EditEventInput>;
+};
+
+export type UpdateEventPayload = {
+  __typename?: 'updateEventPayload';
+  event?: Maybe<Events>;
+};
+
+export type DeleteEventPayload = {
+  __typename?: 'deleteEventPayload';
+  event?: Maybe<Events>;
+};
+
 export type Food = {
   __typename?: 'Food';
   id: Scalars['ID'];
@@ -154,6 +191,80 @@ export type UpdateFoodPayload = {
 export type DeleteFoodPayload = {
   __typename?: 'deleteFoodPayload';
   food?: Maybe<Food>;
+};
+
+export type Live = {
+  __typename?: 'Live';
+  id: Scalars['ID'];
+  created_at: Scalars['DateTime'];
+  updated_at: Scalars['DateTime'];
+  gallery?: Maybe<ComponentGalleryGallery>;
+  published_at?: Maybe<Scalars['DateTime']>;
+};
+
+export type LiveInput = {
+  gallery?: Maybe<ComponentGalleryGalleryInput>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type EditLiveInput = {
+  gallery?: Maybe<EditComponentGalleryGalleryInput>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type UpdateLiveInput = {
+  data?: Maybe<EditLiveInput>;
+};
+
+export type UpdateLivePayload = {
+  __typename?: 'updateLivePayload';
+  live?: Maybe<Live>;
+};
+
+export type DeleteLivePayload = {
+  __typename?: 'deleteLivePayload';
+  live?: Maybe<Live>;
+};
+
+export type Portraits = {
+  __typename?: 'Portraits';
+  id: Scalars['ID'];
+  created_at: Scalars['DateTime'];
+  updated_at: Scalars['DateTime'];
+  gallery?: Maybe<ComponentGalleryGallery>;
+  published_at?: Maybe<Scalars['DateTime']>;
+};
+
+export type PortraitInput = {
+  gallery?: Maybe<ComponentGalleryGalleryInput>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type EditPortraitInput = {
+  gallery?: Maybe<EditComponentGalleryGalleryInput>;
+  published_at?: Maybe<Scalars['DateTime']>;
+  created_by?: Maybe<Scalars['ID']>;
+  updated_by?: Maybe<Scalars['ID']>;
+};
+
+export type UpdatePortraitInput = {
+  data?: Maybe<EditPortraitInput>;
+};
+
+export type UpdatePortraitPayload = {
+  __typename?: 'updatePortraitPayload';
+  portrait?: Maybe<Portraits>;
+};
+
+export type DeletePortraitPayload = {
+  __typename?: 'deletePortraitPayload';
+  portrait?: Maybe<Portraits>;
 };
 
 export type UploadFile = {
@@ -729,7 +840,7 @@ export type EditComponentSocialSocialInput = {
   youtube?: Maybe<Scalars['String']>;
 };
 
-export type Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Contact | UpdateContactPayload | DeleteContactPayload | Food | UpdateFoodPayload | DeleteFoodPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_At | UploadFileConnectionUpdated_At | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | DeleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | CreateRolePayload | UpdateRolePayload | DeleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_At | UsersPermissionsUserConnectionUpdated_At | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | CreateUserPayload | UpdateUserPayload | DeleteUserPayload | ComponentGalleryGallery | ComponentSocialSocial;
+export type Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Contact | UpdateContactPayload | DeleteContactPayload | Events | UpdateEventPayload | DeleteEventPayload | Food | UpdateFoodPayload | DeleteFoodPayload | Live | UpdateLivePayload | DeleteLivePayload | Portraits | UpdatePortraitPayload | DeletePortraitPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_At | UploadFileConnectionUpdated_At | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | DeleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | CreateRolePayload | UpdateRolePayload | DeleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_At | UsersPermissionsUserConnectionUpdated_At | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | CreateUserPayload | UpdateUserPayload | DeleteUserPayload | ComponentGalleryGallery | ComponentSocialSocial;
 
 export type InputId = {
   id: Scalars['ID'];
@@ -751,7 +862,10 @@ export type AdminUser = {
 export type Query = {
   __typename?: 'Query';
   contact?: Maybe<Contact>;
+  event?: Maybe<Events>;
   food?: Maybe<Food>;
+  live?: Maybe<Live>;
+  portrait?: Maybe<Portraits>;
   files?: Maybe<Array<Maybe<UploadFile>>>;
   filesConnection?: Maybe<UploadFileConnection>;
   role?: Maybe<UsersPermissionsRole>;
@@ -770,7 +884,22 @@ export type QueryContactArgs = {
 };
 
 
+export type QueryEventArgs = {
+  publicationState?: Maybe<PublicationState>;
+};
+
+
 export type QueryFoodArgs = {
+  publicationState?: Maybe<PublicationState>;
+};
+
+
+export type QueryLiveArgs = {
+  publicationState?: Maybe<PublicationState>;
+};
+
+
+export type QueryPortraitArgs = {
   publicationState?: Maybe<PublicationState>;
 };
 
@@ -841,8 +970,14 @@ export type Mutation = {
   __typename?: 'Mutation';
   updateContact?: Maybe<UpdateContactPayload>;
   deleteContact?: Maybe<DeleteContactPayload>;
+  updateEvent?: Maybe<UpdateEventPayload>;
+  deleteEvent?: Maybe<DeleteEventPayload>;
   updateFood?: Maybe<UpdateFoodPayload>;
   deleteFood?: Maybe<DeleteFoodPayload>;
+  updateLive?: Maybe<UpdateLivePayload>;
+  deleteLive?: Maybe<DeleteLivePayload>;
+  updatePortrait?: Maybe<UpdatePortraitPayload>;
+  deletePortrait?: Maybe<DeletePortraitPayload>;
   /** Delete one file */
   deleteFile?: Maybe<DeleteFilePayload>;
   /** Create a new role */
@@ -873,8 +1008,23 @@ export type MutationUpdateContactArgs = {
 };
 
 
+export type MutationUpdateEventArgs = {
+  input?: Maybe<UpdateEventInput>;
+};
+
+
 export type MutationUpdateFoodArgs = {
   input?: Maybe<UpdateFoodInput>;
+};
+
+
+export type MutationUpdateLiveArgs = {
+  input?: Maybe<UpdateLiveInput>;
+};
+
+
+export type MutationUpdatePortraitArgs = {
+  input?: Maybe<UpdatePortraitInput>;
 };
 
 
@@ -983,46 +1133,89 @@ export type DataQuery = (
     { __typename?: 'Food' }
     & { gallery?: Maybe<(
       { __typename?: 'ComponentGalleryGallery' }
-      & { photos?: Maybe<Array<Maybe<(
-        { __typename?: 'UploadFile' }
-        & Pick<UploadFile, 'name' | 'alternativeText' | 'caption' | 'width' | 'height' | 'formats' | 'mime' | 'url'>
-      )>>> }
+      & PhotosFragment
+    )> }
+  )>, portrait?: Maybe<(
+    { __typename?: 'Portraits' }
+    & { gallery?: Maybe<(
+      { __typename?: 'ComponentGalleryGallery' }
+      & PhotosFragment
+    )> }
+  )>, event?: Maybe<(
+    { __typename?: 'Events' }
+    & { gallery?: Maybe<(
+      { __typename?: 'ComponentGalleryGallery' }
+      & PhotosFragment
+    )> }
+  )>, live?: Maybe<(
+    { __typename?: 'Live' }
+    & { gallery?: Maybe<(
+      { __typename?: 'ComponentGalleryGallery' }
+      & PhotosFragment
     )> }
   )>, contact?: Maybe<(
     { __typename?: 'Contact' }
     & { social?: Maybe<(
       { __typename?: 'ComponentSocialSocial' }
-      & Pick<ComponentSocialSocial, 'facebook' | 'instagram' | 'youtube'>
+      & Pick<ComponentSocialSocial, 'facebook' | 'instagram' | 'vogue' | 'youtube'>
     )> }
   )> }
 );
 
+export type PhotosFragment = (
+  { __typename?: 'ComponentGalleryGallery' }
+  & { photos?: Maybe<Array<Maybe<(
+    { __typename?: 'UploadFile' }
+    & Pick<UploadFile, 'name' | 'alternativeText' | 'caption' | 'width' | 'height' | 'formats' | 'mime' | 'url'>
+  )>>> }
+);
 
+export const PhotosFragmentDoc = gql`
+    fragment photos on ComponentGalleryGallery {
+  photos {
+    name
+    alternativeText
+    caption
+    width
+    height
+    formats
+    mime
+    url
+  }
+}
+    `;
 export const DataDocument = gql`
     query Data {
   food {
     gallery {
-      photos {
-        name
-        alternativeText
-        caption
-        width
-        height
-        formats
-        mime
-        url
-      }
+      ...photos
+    }
+  }
+  portrait {
+    gallery {
+      ...photos
+    }
+  }
+  event {
+    gallery {
+      ...photos
+    }
+  }
+  live {
+    gallery {
+      ...photos
     }
   }
   contact {
     social {
       facebook
       instagram
+      vogue
       youtube
     }
   }
 }
-    `;
+    ${PhotosFragmentDoc}`;
 
 /**
  * __useDataQuery__

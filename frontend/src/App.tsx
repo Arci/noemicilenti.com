@@ -15,24 +15,44 @@ const GET_DATA = gql`
   query Data {
     food {
       gallery {
-        photos {
-          name
-          alternativeText
-          caption
-          width
-          height
-          formats
-          mime
-          url
-        }
+        ...photos
+      }
+    }
+    portrait {
+      gallery {
+        ...photos
+      }
+    }
+    event {
+      gallery {
+        ...photos
+      }
+    }
+    live {
+      gallery {
+        ...photos
       }
     }
     contact {
       social {
         facebook
         instagram
+        vogue
         youtube
       }
+    }
+  }
+
+  fragment photos on ComponentGalleryGallery {
+    photos {
+      name
+      alternativeText
+      caption
+      width
+      height
+      formats
+      mime
+      url
     }
   }
 `;
