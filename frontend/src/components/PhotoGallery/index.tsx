@@ -26,9 +26,9 @@ const PhotoGallery: React.FC<Props> = ({ gallery }) => {
   const galleryImages: PhotoProps[] = gallery.map(
     (photo, i) => (
       {
-        src: photo.formats.small.url,
-        width: photo.formats.small.width,
-        height: photo.formats.small.height,
+        src: photo.formats.small ? photo.formats.small.url : photo.url,
+        width: photo.formats.small ? photo.formats.small.width : photo.width,
+        height: photo.formats.small ? photo.formats.small.height : photo.height,
         alt: photo?.alternativeText || undefined,
         key: i.toString()
       }

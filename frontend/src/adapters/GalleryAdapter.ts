@@ -1,30 +1,19 @@
-import { Photo } from '../domain/data';
+import { Formats, Photo } from '../domain/data';
 import { DataQuery } from '../generated/graphql';
 
 export class GalleryAdapter {
   adapt(data: DataQuery): Photo[] {
-    const photos = data?.food?.gallery?.photos || []
+    const photos = data?.food?.gallery?.photos || [];
     const adapted: Photo[] = photos.flatMap(photo => {
       if (photo) {
         return {
           name: photo.name,
           url: photo.url,
-          alternativeText: photo.alternativeText,
-          caption: photo.caption,
+          alternativeText: photo.alternativeText ? photo.alternativeText : undefined,
+          caption: photo.caption ? photo.caption : undefined,
           width: photo.width || 0,
           height: photo.height || 0,
-          formats: {
-            small: {
-              url: photo.formats["small"].url,
-              width: photo.formats["small"].width,
-              height: photo.formats["small"].height,
-            },
-            thumbnail: {
-              url: photo.formats["thumbnail"].url,
-              width: photo.formats["thumbnail"].width,
-              height: photo.formats["thumbnail"].height,
-            }
-          }
+          formats: this.adaptFormats(photo.formats)
         }
       } else {
         return []
@@ -33,9 +22,19 @@ export class GalleryAdapter {
     return this.sort(adapted)
   }
 
-  private getOrdinal(fileName: string): number {
-    const match = /[^-]+-(?<ordinal>\d+)/.exec(fileName)
-    return Number(match?.groups?.ordinal)
+  private adaptFormats(formats: any): Formats {
+    return {
+      small: formats["small"] ? {
+        url: formats["small"].url,
+        width: formats["small"].width,
+        height: formats["small"].height,
+      } : undefined,
+      thumbnail: formats["small"] ? {
+        url: formats["thumbnail"].url,
+        width: formats["thumbnail"].width,
+        height: formats["thumbnail"].height,
+      } : undefined
+    }
   }
 
   private sort(photos: Photo[]): Photo[] {
@@ -48,5 +47,10 @@ export class GalleryAdapter {
         return 0;
       }
     )
+  }
+
+  private getOrdinal(fileName: string): number {
+    const match = /[^-]+-(?<ordinal>\d+)/.exec(fileName)
+    return Number(match?.groups?.ordinal)
   }
 }
