@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import './styles.css';
 
@@ -9,13 +9,13 @@ const GridLoader: React.FC = () => {
   }
 
   const elements = 20
-  const components = []
+  const components: ReactElement[] = []
   for (let index = 0; index < elements; index++) {
-    components.push((
+    components.push(
       <SkeletonTheme key={index} color="#cacaca" highlightColor="#dad9d9">
         <div><Skeleton height={randomBetween(180, 500)} /></div>
       </SkeletonTheme>
-    ))
+    )
   }
 
   return (<div className="grid">{components}</div>)

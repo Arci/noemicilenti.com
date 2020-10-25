@@ -65,7 +65,7 @@ const GET_DATA = gql`
 const App: React.FC = () => {
   useEffect(() => {
     trackPageView()
-  });
+  }, []);
 
   const { loading, error, data } = useQuery(GET_DATA);
 

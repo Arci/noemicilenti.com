@@ -1,25 +1,29 @@
 import { Formats, Photo } from '../domain/data';
-import { DataQuery } from '../generated/graphql';
+import { DataQuery, PhotoFragment } from '../generated/graphql';
 
 export class GalleryAdapter {
   adapt(galleryName: string, data: DataQuery): Photo[] {
     const photos = this.fromName(galleryName, data);
-    const adapted: Photo[] = photos.flatMap(photo => {
+    const adapted = this.adaptPhotos(photos)
+    return this.sort(adapted)
+  }
+
+  private adaptPhotos(photos: any[]): Photo[] {
+    return photos.flatMap((photo: PhotoFragment) => {
       if (photo) {
         return {
           name: photo.name,
           url: photo.url,
-          alternativeText: photo.alternativeText ? photo.alternativeText : undefined,
-          caption: photo.caption ? photo.caption : undefined,
+          alternativeText: photo.alternativeText || undefined,
+          caption: photo.caption || undefined,
           width: photo.width || 0,
           height: photo.height || 0,
           formats: this.adaptFormats(photo.formats)
-        }
+        } as Photo;
       } else {
-        return []
+        return [];
       }
-    })
-    return this.sort(adapted)
+    });
   }
 
   private fromName(galleryName: string, data: DataQuery): any[] {

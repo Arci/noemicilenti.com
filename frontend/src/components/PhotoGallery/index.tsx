@@ -13,7 +13,7 @@ const PhotoGallery: React.FC<Props> = ({ gallery }) => {
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
-  const openLightbox = useCallback((event, { photo, index }) => {
+  const openLightbox = useCallback((_event, { index }) => {
     setCurrentImage(index);
     setViewerIsOpen(true);
   }, []);
