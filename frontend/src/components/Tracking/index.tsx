@@ -1,17 +1,13 @@
 import ReactGA from 'react-ga';
 
-export const initGA = (trackingID: string) => {
+export const initGA = (trackingID: string): void => {
   ReactGA.initialize(trackingID);
-}
+};
 
-export const trackPageView = () => {
+export const trackPageView = (): void => {
   ReactGA.pageview(window.location.pathname + window.location.search);
-}
+};
 
-export const trackEvent = (category: string, action: string, label: string) => {
-  ReactGA.event({
-    category: category,
-    action: action,
-    label: label
-  });
+export const trackEvent = (category: string, action: string, label: string): void => {
+  ReactGA.event({ category, action, label });
 };

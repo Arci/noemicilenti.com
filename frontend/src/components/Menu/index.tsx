@@ -12,9 +12,9 @@ const Menu: React.FC<Props> = ({ socialNetworks }) => {
 
   return (
     <>
-      <nav id="hamburger" onClick={() => setIsOpen(!isOpen)}>
+      <button type="button" id="hamburger" onClick={() => setIsOpen(!isOpen)}>
         <img src="https://noemicilenti.com/img/hamburger.png" alt="menu" />
-      </nav>
+      </button>
       <section id="logo">
         <p>Noemi Cilenti</p>
         <p>&copy; NC Photography</p>
@@ -30,8 +30,8 @@ const Menu: React.FC<Props> = ({ socialNetworks }) => {
       </section>
       <section id="social">
         <ul>
-          {socialNetworks.map((socialNetwork, i) => (
-            <li key={i} className={socialNetwork.name}>
+          {socialNetworks.map((socialNetwork) => (
+            <li key={socialNetwork.name} className={socialNetwork.name}>
               <a href={socialNetwork.url} target="_blank" rel="noopener noreferrer">
                 <img src={`https://noemicilenti.com/img/social/${socialNetwork.name}.png`} alt={socialNetwork.name} />
               </a>
@@ -40,7 +40,7 @@ const Menu: React.FC<Props> = ({ socialNetworks }) => {
         </ul>
       </section>
     </>
-  )
+  );
 };
 
-export default Menu
+export default Menu;

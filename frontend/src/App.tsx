@@ -3,12 +3,12 @@ import { Route } from 'react-router-dom';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/client';
 import { initGA, trackPageView } from './components/Tracking';
-import { SocialsNetworksAdapter as SocialNetworksAdapter } from './adapters/SocialsNetworksAdapter';
-import { GalleryAdapter } from './adapters/GalleryAdapter';
+import SocialNetworksAdapter from './adapters/SocialNetworksAdapter';
+import GalleryAdapter from './adapters/GalleryAdapter';
 import Menu from './components/Menu';
 import Contact from './components/Contact';
 import PhotoGallery from './components/PhotoGallery';
-import './App.css'
+import './App.css';
 
 initGA('G-Z7QCPWVMCG');
 
@@ -64,32 +64,36 @@ const GET_DATA = gql`
 
 const App: React.FC = () => {
   useEffect(() => {
-    trackPageView()
+    trackPageView();
   }, []);
 
   const { loading, error, data } = useQuery(GET_DATA);
 
-  if (loading) return (
-    <>
-      <nav>
-        <Menu socialNetworks={[]} />
-      </nav>
-      <article>
-        <PhotoGallery gallery={[]} />
-      </article>
-    </>
-  );
-  if (error) return (
-    <>
-      <nav>
-        <Menu socialNetworks={[]} />
-      </nav>
-      <article>
-        {/* TODO style this */}
-        <div>Error! ${error.message}</div>
-      </article>
-    </>
-  );
+  if (loading) {
+    return (
+      <>
+        <nav>
+          <Menu socialNetworks={[]} />
+        </nav>
+        <article>
+          <PhotoGallery gallery={[]} />
+        </article>
+      </>
+    );
+  }
+  if (error) {
+    return (
+      <>
+        <nav>
+          <Menu socialNetworks={[]} />
+        </nav>
+        <article>
+          {/* TODO style this */}
+          <div>Error!</div>
+        </article>
+      </>
+    );
+  }
   return (
     <>
       <nav>
@@ -97,16 +101,16 @@ const App: React.FC = () => {
       </nav>
       <article>
         <Route path="/food">
-          <PhotoGallery gallery={new GalleryAdapter().adapt("food", data)} />
+          <PhotoGallery gallery={new GalleryAdapter().adapt('food', data)} />
         </Route>
         <Route path="/events">
-          <PhotoGallery gallery={new GalleryAdapter().adapt("events", data)} />
+          <PhotoGallery gallery={new GalleryAdapter().adapt('events', data)} />
         </Route>
         <Route path="/live">
-          <PhotoGallery gallery={new GalleryAdapter().adapt("live", data)} />
+          <PhotoGallery gallery={new GalleryAdapter().adapt('live', data)} />
         </Route>
         <Route path="/portraits">
-          <PhotoGallery gallery={new GalleryAdapter().adapt("portraits", data)} />
+          <PhotoGallery gallery={new GalleryAdapter().adapt('portraits', data)} />
         </Route>
         <Route path="/contact">
           <Contact />
@@ -114,6 +118,6 @@ const App: React.FC = () => {
       </article>
     </>
   );
-}
+};
 
 export default App;

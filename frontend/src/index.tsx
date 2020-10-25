@@ -8,7 +8,7 @@ import App from './App';
 
 const client = new ApolloClient({
   uri: 'https://noemicilenti.herokuapp.com/graphql',
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
 });
 
 ReactDOM.render(
@@ -19,5 +19,5 @@ ReactDOM.render(
       </BrowserRouter>
     </ApolloHooksProvider>
   </ApolloProvider>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );

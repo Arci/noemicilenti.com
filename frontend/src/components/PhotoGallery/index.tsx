@@ -9,7 +9,6 @@ interface Props {
 }
 
 const PhotoGallery: React.FC<Props> = ({ gallery }) => {
-
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
@@ -30,20 +29,20 @@ const PhotoGallery: React.FC<Props> = ({ gallery }) => {
         width: photo.formats.small ? photo.formats.small.width : photo.width,
         height: photo.formats.small ? photo.formats.small.height : photo.height,
         alt: photo?.alternativeText || undefined,
-        key: i.toString()
+        key: i.toString(),
       }
-    )
+    ),
   );
   const carouselImages: ViewType[] = gallery.map(
-    photo => (
+    (photo) => (
       { source: photo.url }
-    )
-  )
+    ),
+  );
 
-  if (gallery.length === 0) return (<GridLoader />)
-  else return (
+  if (gallery.length === 0) return (<GridLoader />);
+  return (
     <>
-      <Gallery photos={galleryImages} direction={"column"} onClick={openLightbox} />
+      <Gallery photos={galleryImages} direction="column" onClick={openLightbox} />
       <ModalGateway>
         {viewerIsOpen && (
           <Modal onClose={closeLightbox}>
@@ -52,7 +51,7 @@ const PhotoGallery: React.FC<Props> = ({ gallery }) => {
         )}
       </ModalGateway>
     </>
-  )
+  );
 };
 
-export default PhotoGallery
+export default PhotoGallery;
