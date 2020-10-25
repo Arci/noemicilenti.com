@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/client';
-import { useLocation } from 'react-router-dom';
+import { Route, Switch, useLocation } from 'react-router-dom';
 import { initGA, trackPageView } from './components/Tracking';
 import { SocialsAdapter } from './adapters/SocialsAdapter';
 import { GalleryAdapter } from './adapters/GalleryAdapter';
@@ -94,7 +94,23 @@ const App: React.FC = () => {
         <Social socials={new SocialsAdapter().adapt(data)} />
       </nav>
       <article>
-        <PhotoGallery gallery={new GalleryAdapter().adapt(pathname, data)} />
+        <Switch>
+          <Route path="/food">
+            <PhotoGallery gallery={new GalleryAdapter().adapt("/food", data)} />
+          </Route>
+          <Route path="/events">
+            <PhotoGallery gallery={new GalleryAdapter().adapt("/events", data)} />
+          </Route>
+          <Route path="/live">
+            <PhotoGallery gallery={new GalleryAdapter().adapt("/live", data)} />
+          </Route>
+          <Route path="/portraits">
+            <PhotoGallery gallery={new GalleryAdapter().adapt("/portraits", data)} />
+          </Route>
+          <Route path="/contact">
+            <h1>contacts</h1>
+          </Route>
+        </Switch>
       </article>
     </>
   );
