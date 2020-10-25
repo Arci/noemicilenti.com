@@ -2,8 +2,8 @@ import { Formats, Photo } from '../domain/data';
 import { DataQuery } from '../generated/graphql';
 
 export class GalleryAdapter {
-  adapt(data: DataQuery): Photo[] {
-    const photos = data?.food?.gallery?.photos || [];
+  adapt(pathname: string, data: DataQuery): Photo[] {
+    const photos = this.fromPathname(pathname, data);
     const adapted: Photo[] = photos.flatMap(photo => {
       if (photo) {
         return {
@@ -20,6 +20,21 @@ export class GalleryAdapter {
       }
     })
     return this.sort(adapted)
+  }
+
+  private fromPathname(pathname: string, data: DataQuery): any[] {
+    switch (pathname.substring(1)) {
+      case 'food':
+        return data?.food?.gallery?.photos || []
+      case 'events':
+        return data?.event?.gallery?.photos || []
+      case 'portraits':
+        return data?.portrait?.gallery?.photos || []
+      case 'live':
+        return data?.live?.gallery?.photos || []
+      default:
+        return []
+    }
   }
 
   private adaptFormats(formats: any): Formats {

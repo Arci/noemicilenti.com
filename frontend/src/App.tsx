@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/client';
+import { useLocation } from 'react-router-dom';
 import { initGA, trackPageView } from './components/Tracking';
 import { SocialsAdapter } from './adapters/SocialsAdapter';
 import { GalleryAdapter } from './adapters/GalleryAdapter';
@@ -62,6 +63,7 @@ const App: React.FC = () => {
     trackPageView()
   });
 
+  const { pathname } = useLocation()
   const { loading, error, data } = useQuery(GET_DATA);
 
   if (loading) return (
@@ -92,7 +94,7 @@ const App: React.FC = () => {
         <Social socials={new SocialsAdapter().adapt(data)} />
       </nav>
       <article>
-        <PhotoGallery gallery={new GalleryAdapter().adapt(data)} />
+        <PhotoGallery gallery={new GalleryAdapter().adapt(pathname, data)} />
       </article>
     </>
   );
