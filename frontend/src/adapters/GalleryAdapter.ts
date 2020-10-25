@@ -1,15 +1,15 @@
+import { DataQuery, PhotoFragment, Scalars } from '../generated/graphql';
 import { Formats, Photo } from '../domain/data';
-import { DataQuery, PhotoFragment } from '../generated/graphql';
 
 class GalleryAdapter {
   adapt(galleryName: string, data: DataQuery): Photo[] {
-    const photos = this.fromName(galleryName, data);
+    const photos = this.findByName(data?.galleries, galleryName);
     const adapted = this.adaptPhotos(photos);
     return this.sort(adapted);
   }
 
-  private adaptPhotos(photos: any[]): Photo[] {
-    return photos.flatMap((photo: PhotoFragment) => {
+  private adaptPhotos(photos: PhotoFragment[]): Photo[] {
+    return photos.flatMap((photo) => {
       if (photo) {
         return {
           name: photo.name,
@@ -19,28 +19,18 @@ class GalleryAdapter {
           width: photo.width || 0,
           height: photo.height || 0,
           formats: this.adaptFormats(photo.formats),
-        } as Photo;
+        };
       }
       return [];
     });
   }
 
-  private fromName = (galleryName: string, data: DataQuery): any[] => {
-    switch (galleryName) {
-      case 'food':
-        return data?.food?.gallery || [];
-      case 'events':
-        return data?.event?.gallery || [];
-      case 'portraits':
-        return data?.portrait?.gallery || [];
-      case 'live':
-        return data?.live?.gallery || [];
-      default:
-        return [];
-    }
+  private findByName = (galleries: DataQuery['galleries'], name: string): PhotoFragment[] => {
+    const gallery = galleries?.find((it) => it?.title === name);
+    return gallery?.photos as PhotoFragment[] || [];
   }
 
-  private adaptFormats = (formats: any): Formats => ({
+  private adaptFormats = (formats: Scalars['JSON']): Formats => ({
     small: formats.small ? {
       url: formats.small.url,
       width: formats.small.width,

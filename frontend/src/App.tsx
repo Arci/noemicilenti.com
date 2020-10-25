@@ -14,25 +14,9 @@ initGA('G-Z7QCPWVMCG');
 
 const GET_DATA = gql`
   query Data {
-    food {
-      gallery{
-        ...photo
-      }
-    }
-    portrait {
-      gallery {
-        ...photo
-      }
-    }
-    event {
-      gallery {
-        ...photo
-      }
-    }
-    live {
-      gallery {
-        ...photo
-      }
+    galleries {
+      title
+      ...photos
     }
     contact {
       cover {
@@ -47,6 +31,12 @@ const GET_DATA = gql`
       instagram
       vogue
       youtube
+    }
+  }
+
+  fragment photos on Gallery{
+    photos{
+      ...photo
     }
   }
 

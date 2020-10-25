@@ -116,184 +116,118 @@ export type DeleteContactPayload = {
   contact?: Maybe<Contact>;
 };
 
-export type Event = {
-  __typename?: 'Event';
+export type Gallery = {
+  __typename?: 'Gallery';
   id: Scalars['ID'];
   created_at: Scalars['DateTime'];
   updated_at: Scalars['DateTime'];
+  title?: Maybe<Scalars['String']>;
   published_at?: Maybe<Scalars['DateTime']>;
-  gallery?: Maybe<Array<Maybe<UploadFile>>>;
+  photos?: Maybe<Array<Maybe<UploadFile>>>;
 };
 
 
-export type EventGalleryArgs = {
+export type GalleryPhotosArgs = {
   sort?: Maybe<Scalars['String']>;
   limit?: Maybe<Scalars['Int']>;
   start?: Maybe<Scalars['Int']>;
   where?: Maybe<Scalars['JSON']>;
 };
 
-export type EventInput = {
-  gallery?: Maybe<Array<Maybe<Scalars['ID']>>>;
+export type GalleryConnection = {
+  __typename?: 'GalleryConnection';
+  values?: Maybe<Array<Maybe<Gallery>>>;
+  groupBy?: Maybe<GalleryGroupBy>;
+  aggregate?: Maybe<GalleryAggregator>;
+};
+
+export type GalleryAggregator = {
+  __typename?: 'GalleryAggregator';
+  count?: Maybe<Scalars['Int']>;
+  totalCount?: Maybe<Scalars['Int']>;
+};
+
+export type GalleryGroupBy = {
+  __typename?: 'GalleryGroupBy';
+  id?: Maybe<Array<Maybe<GalleryConnectionId>>>;
+  created_at?: Maybe<Array<Maybe<GalleryConnectionCreated_At>>>;
+  updated_at?: Maybe<Array<Maybe<GalleryConnectionUpdated_At>>>;
+  title?: Maybe<Array<Maybe<GalleryConnectionTitle>>>;
+  published_at?: Maybe<Array<Maybe<GalleryConnectionPublished_At>>>;
+};
+
+export type GalleryConnectionId = {
+  __typename?: 'GalleryConnectionId';
+  key?: Maybe<Scalars['ID']>;
+  connection?: Maybe<GalleryConnection>;
+};
+
+export type GalleryConnectionCreated_At = {
+  __typename?: 'GalleryConnectionCreated_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<GalleryConnection>;
+};
+
+export type GalleryConnectionUpdated_At = {
+  __typename?: 'GalleryConnectionUpdated_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<GalleryConnection>;
+};
+
+export type GalleryConnectionTitle = {
+  __typename?: 'GalleryConnectionTitle';
+  key?: Maybe<Scalars['String']>;
+  connection?: Maybe<GalleryConnection>;
+};
+
+export type GalleryConnectionPublished_At = {
+  __typename?: 'GalleryConnectionPublished_at';
+  key?: Maybe<Scalars['DateTime']>;
+  connection?: Maybe<GalleryConnection>;
+};
+
+export type GalleryInput = {
+  title?: Maybe<Scalars['String']>;
+  photos?: Maybe<Array<Maybe<Scalars['ID']>>>;
   published_at?: Maybe<Scalars['DateTime']>;
   created_by?: Maybe<Scalars['ID']>;
   updated_by?: Maybe<Scalars['ID']>;
 };
 
-export type EditEventInput = {
-  gallery?: Maybe<Array<Maybe<Scalars['ID']>>>;
+export type EditGalleryInput = {
+  title?: Maybe<Scalars['String']>;
+  photos?: Maybe<Array<Maybe<Scalars['ID']>>>;
   published_at?: Maybe<Scalars['DateTime']>;
   created_by?: Maybe<Scalars['ID']>;
   updated_by?: Maybe<Scalars['ID']>;
 };
 
-export type UpdateEventInput = {
-  data?: Maybe<EditEventInput>;
+export type CreateGalleryInput = {
+  data?: Maybe<GalleryInput>;
 };
 
-export type UpdateEventPayload = {
-  __typename?: 'updateEventPayload';
-  event?: Maybe<Event>;
+export type CreateGalleryPayload = {
+  __typename?: 'createGalleryPayload';
+  gallery?: Maybe<Gallery>;
 };
 
-export type DeleteEventPayload = {
-  __typename?: 'deleteEventPayload';
-  event?: Maybe<Event>;
+export type UpdateGalleryInput = {
+  where?: Maybe<InputId>;
+  data?: Maybe<EditGalleryInput>;
 };
 
-export type Food = {
-  __typename?: 'Food';
-  id: Scalars['ID'];
-  created_at: Scalars['DateTime'];
-  updated_at: Scalars['DateTime'];
-  published_at?: Maybe<Scalars['DateTime']>;
-  gallery?: Maybe<Array<Maybe<UploadFile>>>;
+export type UpdateGalleryPayload = {
+  __typename?: 'updateGalleryPayload';
+  gallery?: Maybe<Gallery>;
 };
 
-
-export type FoodGalleryArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
+export type DeleteGalleryInput = {
+  where?: Maybe<InputId>;
 };
 
-export type FoodInput = {
-  gallery?: Maybe<Array<Maybe<Scalars['ID']>>>;
-  published_at?: Maybe<Scalars['DateTime']>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
-};
-
-export type EditFoodInput = {
-  gallery?: Maybe<Array<Maybe<Scalars['ID']>>>;
-  published_at?: Maybe<Scalars['DateTime']>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
-};
-
-export type UpdateFoodInput = {
-  data?: Maybe<EditFoodInput>;
-};
-
-export type UpdateFoodPayload = {
-  __typename?: 'updateFoodPayload';
-  food?: Maybe<Food>;
-};
-
-export type DeleteFoodPayload = {
-  __typename?: 'deleteFoodPayload';
-  food?: Maybe<Food>;
-};
-
-export type Live = {
-  __typename?: 'Live';
-  id: Scalars['ID'];
-  created_at: Scalars['DateTime'];
-  updated_at: Scalars['DateTime'];
-  published_at?: Maybe<Scalars['DateTime']>;
-  gallery?: Maybe<Array<Maybe<UploadFile>>>;
-};
-
-
-export type LiveGalleryArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
-};
-
-export type LiveInput = {
-  gallery?: Maybe<Array<Maybe<Scalars['ID']>>>;
-  published_at?: Maybe<Scalars['DateTime']>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
-};
-
-export type EditLiveInput = {
-  gallery?: Maybe<Array<Maybe<Scalars['ID']>>>;
-  published_at?: Maybe<Scalars['DateTime']>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
-};
-
-export type UpdateLiveInput = {
-  data?: Maybe<EditLiveInput>;
-};
-
-export type UpdateLivePayload = {
-  __typename?: 'updateLivePayload';
-  live?: Maybe<Live>;
-};
-
-export type DeleteLivePayload = {
-  __typename?: 'deleteLivePayload';
-  live?: Maybe<Live>;
-};
-
-export type Portrait = {
-  __typename?: 'Portrait';
-  id: Scalars['ID'];
-  created_at: Scalars['DateTime'];
-  updated_at: Scalars['DateTime'];
-  published_at?: Maybe<Scalars['DateTime']>;
-  gallery?: Maybe<Array<Maybe<UploadFile>>>;
-};
-
-
-export type PortraitGalleryArgs = {
-  sort?: Maybe<Scalars['String']>;
-  limit?: Maybe<Scalars['Int']>;
-  start?: Maybe<Scalars['Int']>;
-  where?: Maybe<Scalars['JSON']>;
-};
-
-export type PortraitInput = {
-  gallery?: Maybe<Array<Maybe<Scalars['ID']>>>;
-  published_at?: Maybe<Scalars['DateTime']>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
-};
-
-export type EditPortraitInput = {
-  gallery?: Maybe<Array<Maybe<Scalars['ID']>>>;
-  published_at?: Maybe<Scalars['DateTime']>;
-  created_by?: Maybe<Scalars['ID']>;
-  updated_by?: Maybe<Scalars['ID']>;
-};
-
-export type UpdatePortraitInput = {
-  data?: Maybe<EditPortraitInput>;
-};
-
-export type UpdatePortraitPayload = {
-  __typename?: 'updatePortraitPayload';
-  portrait?: Maybe<Portrait>;
-};
-
-export type DeletePortraitPayload = {
-  __typename?: 'deletePortraitPayload';
-  portrait?: Maybe<Portrait>;
+export type DeleteGalleryPayload = {
+  __typename?: 'deleteGalleryPayload';
+  gallery?: Maybe<Gallery>;
 };
 
 export type Social = {
@@ -868,7 +802,7 @@ export type DeleteUserPayload = {
   user?: Maybe<UsersPermissionsUser>;
 };
 
-export type Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Contact | UpdateContactPayload | DeleteContactPayload | Event | UpdateEventPayload | DeleteEventPayload | Food | UpdateFoodPayload | DeleteFoodPayload | Live | UpdateLivePayload | DeleteLivePayload | Portrait | UpdatePortraitPayload | DeletePortraitPayload | Social | UpdateSocialPayload | DeleteSocialPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_At | UploadFileConnectionUpdated_At | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | DeleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | CreateRolePayload | UpdateRolePayload | DeleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_At | UsersPermissionsUserConnectionUpdated_At | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | CreateUserPayload | UpdateUserPayload | DeleteUserPayload;
+export type Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Contact | UpdateContactPayload | DeleteContactPayload | Gallery | GalleryConnection | GalleryAggregator | GalleryGroupBy | GalleryConnectionId | GalleryConnectionCreated_At | GalleryConnectionUpdated_At | GalleryConnectionTitle | GalleryConnectionPublished_At | CreateGalleryPayload | UpdateGalleryPayload | DeleteGalleryPayload | Social | UpdateSocialPayload | DeleteSocialPayload | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_At | UploadFileConnectionUpdated_At | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_Metadata | DeleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | CreateRolePayload | UpdateRolePayload | DeleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_At | UsersPermissionsUserConnectionUpdated_At | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | CreateUserPayload | UpdateUserPayload | DeleteUserPayload;
 
 export type InputId = {
   id: Scalars['ID'];
@@ -890,10 +824,9 @@ export type AdminUser = {
 export type Query = {
   __typename?: 'Query';
   contact?: Maybe<Contact>;
-  event?: Maybe<Event>;
-  food?: Maybe<Food>;
-  live?: Maybe<Live>;
-  portrait?: Maybe<Portrait>;
+  gallery?: Maybe<Gallery>;
+  galleries?: Maybe<Array<Maybe<Gallery>>>;
+  galleriesConnection?: Maybe<GalleryConnection>;
   social?: Maybe<Social>;
   files?: Maybe<Array<Maybe<UploadFile>>>;
   filesConnection?: Maybe<UploadFileConnection>;
@@ -913,23 +846,26 @@ export type QueryContactArgs = {
 };
 
 
-export type QueryEventArgs = {
+export type QueryGalleryArgs = {
+  id: Scalars['ID'];
   publicationState?: Maybe<PublicationState>;
 };
 
 
-export type QueryFoodArgs = {
+export type QueryGalleriesArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
   publicationState?: Maybe<PublicationState>;
 };
 
 
-export type QueryLiveArgs = {
-  publicationState?: Maybe<PublicationState>;
-};
-
-
-export type QueryPortraitArgs = {
-  publicationState?: Maybe<PublicationState>;
+export type QueryGalleriesConnectionArgs = {
+  sort?: Maybe<Scalars['String']>;
+  limit?: Maybe<Scalars['Int']>;
+  start?: Maybe<Scalars['Int']>;
+  where?: Maybe<Scalars['JSON']>;
 };
 
 
@@ -1004,14 +940,9 @@ export type Mutation = {
   __typename?: 'Mutation';
   updateContact?: Maybe<UpdateContactPayload>;
   deleteContact?: Maybe<DeleteContactPayload>;
-  updateEvent?: Maybe<UpdateEventPayload>;
-  deleteEvent?: Maybe<DeleteEventPayload>;
-  updateFood?: Maybe<UpdateFoodPayload>;
-  deleteFood?: Maybe<DeleteFoodPayload>;
-  updateLive?: Maybe<UpdateLivePayload>;
-  deleteLive?: Maybe<DeleteLivePayload>;
-  updatePortrait?: Maybe<UpdatePortraitPayload>;
-  deletePortrait?: Maybe<DeletePortraitPayload>;
+  createGallery?: Maybe<CreateGalleryPayload>;
+  updateGallery?: Maybe<UpdateGalleryPayload>;
+  deleteGallery?: Maybe<DeleteGalleryPayload>;
   updateSocial?: Maybe<UpdateSocialPayload>;
   deleteSocial?: Maybe<DeleteSocialPayload>;
   /** Delete one file */
@@ -1044,23 +975,18 @@ export type MutationUpdateContactArgs = {
 };
 
 
-export type MutationUpdateEventArgs = {
-  input?: Maybe<UpdateEventInput>;
+export type MutationCreateGalleryArgs = {
+  input?: Maybe<CreateGalleryInput>;
 };
 
 
-export type MutationUpdateFoodArgs = {
-  input?: Maybe<UpdateFoodInput>;
+export type MutationUpdateGalleryArgs = {
+  input?: Maybe<UpdateGalleryInput>;
 };
 
 
-export type MutationUpdateLiveArgs = {
-  input?: Maybe<UpdateLiveInput>;
-};
-
-
-export type MutationUpdatePortraitArgs = {
-  input?: Maybe<UpdatePortraitInput>;
+export type MutationDeleteGalleryArgs = {
+  input?: Maybe<DeleteGalleryInput>;
 };
 
 
@@ -1170,31 +1096,11 @@ export type DataQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type DataQuery = (
   { __typename?: 'Query' }
-  & { food?: Maybe<(
-    { __typename?: 'Food' }
-    & { gallery?: Maybe<Array<Maybe<(
-      { __typename?: 'UploadFile' }
-      & PhotoFragment
-    )>>> }
-  )>, portrait?: Maybe<(
-    { __typename?: 'Portrait' }
-    & { gallery?: Maybe<Array<Maybe<(
-      { __typename?: 'UploadFile' }
-      & PhotoFragment
-    )>>> }
-  )>, event?: Maybe<(
-    { __typename?: 'Event' }
-    & { gallery?: Maybe<Array<Maybe<(
-      { __typename?: 'UploadFile' }
-      & PhotoFragment
-    )>>> }
-  )>, live?: Maybe<(
-    { __typename?: 'Live' }
-    & { gallery?: Maybe<Array<Maybe<(
-      { __typename?: 'UploadFile' }
-      & PhotoFragment
-    )>>> }
-  )>, contact?: Maybe<(
+  & { galleries?: Maybe<Array<Maybe<(
+    { __typename?: 'Gallery' }
+    & Pick<Gallery, 'title'>
+    & PhotosFragment
+  )>>>, contact?: Maybe<(
     { __typename?: 'Contact' }
     & Pick<Contact, 'description' | 'email' | 'phone'>
     & { cover?: Maybe<(
@@ -1205,6 +1111,14 @@ export type DataQuery = (
     { __typename?: 'Social' }
     & Pick<Social, 'facebook' | 'instagram' | 'vogue' | 'youtube'>
   )> }
+);
+
+export type PhotosFragment = (
+  { __typename?: 'Gallery' }
+  & { photos?: Maybe<Array<Maybe<(
+    { __typename?: 'UploadFile' }
+    & PhotoFragment
+  )>>> }
 );
 
 export type PhotoFragment = (
@@ -1224,27 +1138,18 @@ export const PhotoFragmentDoc = gql`
   url
 }
     `;
+export const PhotosFragmentDoc = gql`
+    fragment photos on Gallery {
+  photos {
+    ...photo
+  }
+}
+    ${PhotoFragmentDoc}`;
 export const DataDocument = gql`
     query Data {
-  food {
-    gallery {
-      ...photo
-    }
-  }
-  portrait {
-    gallery {
-      ...photo
-    }
-  }
-  event {
-    gallery {
-      ...photo
-    }
-  }
-  live {
-    gallery {
-      ...photo
-    }
+  galleries {
+    title
+    ...photos
   }
   contact {
     cover {
@@ -1261,7 +1166,8 @@ export const DataDocument = gql`
     youtube
   }
 }
-    ${PhotoFragmentDoc}`;
+    ${PhotosFragmentDoc}
+${PhotoFragmentDoc}`;
 
 /**
  * __useDataQuery__
