@@ -52,7 +52,7 @@ const GET_DATA = gql`
       alternativeText
       caption
       width
-      height
+      heights
       formats
       mime
       url
@@ -84,6 +84,7 @@ const App: React.FC = () => {
         <Menu />
       </nav>
       <article>
+        {/* TODO style this */}
         <div>Error! ${error.message}</div>
       </article>
     </>
