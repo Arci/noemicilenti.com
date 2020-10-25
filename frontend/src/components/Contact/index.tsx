@@ -24,7 +24,7 @@ const Contact: React.FC<Props> = ({ info }) => (
         </a>
       </p>
       <p>
-        <a href={`tel::${info.phone.replaceAll(' ', '')}`}>
+        <a href={`tel:${info.phone.replaceAll(' ', '')}`}>
           <img src="https://noemicilenti.com/img/social/phone.png" alt="phone" />
           <span>{info.phone}</span>
         </a>
