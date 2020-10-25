@@ -68,7 +68,7 @@ const App: React.FC = () => {
   if (loading) return (
     <>
       <nav>
-        <Menu socials={[]} />
+        <Menu socialNetworks={[]} />
       </nav>
       <article>
         <PhotoGallery gallery={[]} />
@@ -78,7 +78,7 @@ const App: React.FC = () => {
   if (error) return (
     <>
       <nav>
-        <Menu socials={[]} />
+        <Menu socialNetworks={[]} />
       </nav>
       <article>
         {/* TODO style this */}
@@ -89,7 +89,7 @@ const App: React.FC = () => {
   return (
     <>
       <nav>
-        <Menu socials={new SocialsAdapter().adapt(data)} />
+        <Menu socialNetworks={new SocialsAdapter().adapt(data)} />
       </nav>
       <article>
         <Route path="/food">

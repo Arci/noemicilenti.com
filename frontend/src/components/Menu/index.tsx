@@ -4,10 +4,10 @@ import { SocialNetwork } from '../../domain/data';
 import './styles.css';
 
 interface Props {
-  socials: SocialNetwork[];
+  socialNetworks: SocialNetwork[];
 }
 
-const Menu: React.FC<Props> = ({ socials }) => {
+const Menu: React.FC<Props> = ({ socialNetworks }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -30,10 +30,10 @@ const Menu: React.FC<Props> = ({ socials }) => {
       </section>
       <section id="social">
         <ul>
-          {socials.map((social, i) => (
-            <li key={i} className={social.name}>
-              <a href={social.url} target="_blank" rel="noopener noreferrer">
-                <img src={`https://noemicilenti.com/img/social/${social.name}.png`} alt={social.name} />
+          {socialNetworks.map((socialNetwork, i) => (
+            <li key={i} className={socialNetwork.name}>
+              <a href={socialNetwork.url} target="_blank" rel="noopener noreferrer">
+                <img src={`https://noemicilenti.com/img/social/${socialNetwork.name}.png`} alt={socialNetwork.name} />
               </a>
             </li>
           ))}
