@@ -1,0 +1,84 @@
+/* cover */
+#cover {
+  margin: 0 15px;
+}
+
+#cover img {
+  width: 100%;
+  height: auto;
+}
+
+@media only screen and (min-width: 992px) {
+  #cover {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  #cover img {
+    width: auto;
+  }
+}
+
+/* description */
+#description {
+  margin: 40px 0;
+  padding: 0 35px;
+  line-height: 1.5em;
+  text-align: justify;
+}
+
+/* horizzontal line */
+
+hr {
+  width: 85%;
+  margin-bottom: 20px;
+}
+
+/* info */
+#info {
+  width: 100%;
+  padding: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 992px) {
+  #info {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+#info p {
+  text-align: center;
+}
+
+#info p:not(:first-child) {
+  margin-top: 30px;
+}
+
+@media only screen and (min-width: 992px) {
+  #info p {
+    width: 40%;
+  }
+  #info p:not(:first-child) {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  #info p {
+    width: 30%;
+  }
+}
+
+#info a img {
+  vertical-align: middle;
+  width: 20px;
+  height: auto;
+}
+
+#info a span {
+  padding-left: 8px;
+}

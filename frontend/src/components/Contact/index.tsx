@@ -10,13 +10,13 @@ interface Props {
 const Contact: React.FC<Props> = ({ info }) => (
   <>
     {info.cover && (
-      <section className="header-image">
+      <section id="cover">
         <img src={info.cover.url} alt="cover" />
       </section>
     )}
-    <section className="description" dangerouslySetInnerHTML={{ __html: info.description }} />
+    <section id="description" dangerouslySetInnerHTML={{ __html: info.description }} />
     <hr />
-    <section className="social">
+    <section id="info">
       <p>
         <a href={`mailto:${info.email}`}>
           <img src="https://noemicilenti.com/img/social/email.png" alt="email" />
