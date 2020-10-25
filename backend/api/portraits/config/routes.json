@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/portraits",
+      "handler": "portraits.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/portraits",
+      "handler": "portraits.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/portraits",
+      "handler": "portraits.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

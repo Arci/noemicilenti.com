@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "portraits",
+  "info": {
+    "name": "portraits"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "gallery": {
+      "type": "component",
+      "repeatable": false,
+      "component": "gallery.gallery"
+    }
+  }
+}
