@@ -19,15 +19,6 @@ const Menu: React.FC<Props> = ({ socialNetworks }) => {
         <p>Noemi Cilenti</p>
         <p>&copy; NC Photography</p>
       </section>
-      <section id="links" className={isOpen ? 'open' : ''}>
-        <ul>
-          <li><Link to="food">Food</Link></li>
-          <li><Link to="events">Events</Link></li>
-          <li><Link to="live">Live</Link></li>
-          <li><Link to="portraits">Portraits</Link></li>
-          <li><Link to="contact">Contact</Link></li>
-        </ul>
-      </section>
       <section id="social">
         <ul>
           {socialNetworks.map((socialNetwork) => (
@@ -37,6 +28,15 @@ const Menu: React.FC<Props> = ({ socialNetworks }) => {
               </a>
             </li>
           ))}
+        </ul>
+      </section>
+      <section id="links" className={isOpen ? 'open' : ''}>
+        <ul>
+          <li><Link to="food">Food</Link></li>
+          <li><Link to="events">Events</Link></li>
+          <li><Link to="live">Live</Link></li>
+          <li><Link to="portraits">Portraits</Link></li>
+          <li><Link to="contact">Contact</Link></li>
         </ul>
       </section>
     </>

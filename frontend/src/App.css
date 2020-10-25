@@ -1,40 +1,5 @@
-@media only screen and (min-width: 1025px) {
-  #root {
-    display: flex;
-  }
-  #root nav {
-    width: 18%;
-  }
-  #root article {
-    width: 82%;
-  }
-}
-
-@media only screen and (min-width: 1100px) {
-  #root nav {
-    width: 15%;
-  }
-  #root article {
-    width: 85%;
-  }
-}
-
-@media only screen and (min-width: 1350px) {
-  #root nav {
-    width: 12%;
-  }
-  #root article {
-    width: 88%;
-  }
-}
-
-@media only screen and (min-width: 1750px) {
-  #root nav {
-    width: 10%;
-  }
-  #root article {
-    width: 90%;
-  }
+nav {
+  margin-top: 20px;
 }
 
 article {
@@ -46,3 +11,44 @@ article {
     margin-right: 20px;
   }
 }
+
+@media only screen and (min-width: 1025px) {
+  #root {
+    display: flex;
+  }
+  nav {
+    width: 18%;
+    margin-left: 20px;
+  }
+  article {
+    width: 82%;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  nav {
+    width: 15%;
+  }
+  article {
+    width: 85%;
+  }
+}
+
+@media only screen and (min-width: 1350px) {
+  nav {
+    width: 12%;
+  }
+  article {
+    width: 88%;
+  }
+}
+
+@media only screen and (min-width: 1750px) {
+  nav {
+    width: 10%;
+  }
+  article {
+    width: 90%;
+  }
+}
+

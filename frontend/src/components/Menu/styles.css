@@ -1,12 +1,16 @@
+/* hamburger */
 #hamburger {
   text-align: right;
   position: absolute;
   margin: 0;
   right: 20px;
+  border: 0;
+  background-color: inherit;
+  padding: 0;
 }
 
 #hamburger img {
-  width: 20px;
+  width: 30px;
   padding: 5px;
   border-radius: 5px;
   border: solid 1px #908f8f;
@@ -20,28 +24,10 @@
   }
 }
 
-nav {
-  margin-top: 20px;
-}
-
-@media only screen and (min-width: 1025px) {
-  nav {
-    margin-left: 20px;
-  }
-}
-
-nav section {
-  text-align: center;
-}
-
-@media only screen and (min-width: 1025px) {
-  nav section {
-    text-align: left;
-  }
-}
-
+/* logo */
 #logo {
   left: 5%;
+  text-align: center;
   margin-bottom: 20px;
 }
 
@@ -53,10 +39,41 @@ nav section {
 
 @media only screen and (min-width: 1025px) {
   #logo {
+    text-align: left;
     margin-bottom: 0;
   }
 }
 
+/* social */
+#social ul {
+  display: flex;
+  justify-content: center;
+}
+
+#social ul li {
+  width: 15px;
+  margin: 0 8px;
+}
+
+#social ul li img {
+  width: 100%;
+}
+
+@media only screen and (min-width: 1025px) {
+  #social {
+    margin-top: 20px;
+  }
+
+  #social ul {
+    justify-content: start;
+  }
+
+  #social ul li:first-of-type{
+    margin-left: 0;
+  }
+}
+
+/* links */
 #links {
   background-color: #ffffff;
   visibility: hidden;
@@ -64,8 +81,10 @@ nav section {
   max-height: 0;
   margin-bottom: 0;
   transition-property: max-height, visibility, overflow, margin;
-  transition-duration: 0.5s;
-  transition-timing-function: ease-out;
+  transition-duration: 0.9s;
+  transition-timing-function: ease-in-out;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .open {
@@ -86,6 +105,7 @@ nav section {
     overflow: visible;
     max-height: unset;
     transition: none;
+    text-align: left;
   }
 }
 
@@ -104,30 +124,5 @@ nav section {
   }
   #links ul li:last-of-type {
     margin-top: 20px;
-  }
-}
-
-#social ul li {
-  display: inline-block;
-  width: 15px;
-}
-
-#social ul li img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-#social ul li:not(:first-child) {
-  margin-left: 8px;
-}
-
-@media only screen and (min-width: 1025px) {
-  #social {
-    margin-top: 20px;
-  }
-
-  #social ul {
-    margin-left: -4px;
   }
 }

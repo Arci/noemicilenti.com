@@ -23,6 +23,12 @@ class SocialNetworksAdapter {
         name: 'youtube',
       });
     }
+    if (socials?.vogue) {
+      result.push({
+        url: socials.vogue,
+        name: 'vogue',
+      });
+    }
     return result;
   }
 }
