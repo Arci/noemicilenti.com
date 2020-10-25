@@ -62,6 +62,9 @@ const GET_DATA = gql`
   }
 `;
 
+const socialNetworksAdapter = new SocialNetworksAdapter();
+const galleryAdapter = new GalleryAdapter();
+
 const App: React.FC = () => {
   useEffect(() => {
     trackPageView();
@@ -97,20 +100,20 @@ const App: React.FC = () => {
   return (
     <>
       <nav>
-        <Menu socialNetworks={new SocialNetworksAdapter().adapt(data)} />
+        <Menu socialNetworks={socialNetworksAdapter.adapt(data)} />
       </nav>
       <article>
         <Route path="/food">
-          <PhotoGallery gallery={new GalleryAdapter().adapt('food', data)} />
+          <PhotoGallery gallery={galleryAdapter.adapt('food', data)} />
         </Route>
         <Route path="/events">
-          <PhotoGallery gallery={new GalleryAdapter().adapt('events', data)} />
+          <PhotoGallery gallery={galleryAdapter.adapt('events', data)} />
         </Route>
         <Route path="/live">
-          <PhotoGallery gallery={new GalleryAdapter().adapt('live', data)} />
+          <PhotoGallery gallery={galleryAdapter.adapt('live', data)} />
         </Route>
         <Route path="/portraits">
-          <PhotoGallery gallery={new GalleryAdapter().adapt('portraits', data)} />
+          <PhotoGallery gallery={galleryAdapter.adapt('portraits', data)} />
         </Route>
         <Route path="/contact">
           <Contact />
