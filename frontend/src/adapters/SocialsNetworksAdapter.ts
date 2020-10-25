@@ -3,7 +3,7 @@ import { DataQuery } from '../generated/graphql';
 
 export class SocialsNetworksAdapter {
   adapt(data: DataQuery): SocialNetwork[] {
-    const socials = data?.contact?.social
+    const socials = data?.social
     const result = []
     if (socials?.facebook) {
       result.push({

@@ -25,13 +25,13 @@ export class GalleryAdapter {
   private fromName(galleryName: string, data: DataQuery): any[] {
     switch (galleryName) {
       case 'food':
-        return data?.food?.gallery?.photos || []
+        return data?.food?.gallery || []
       case 'events':
-        return data?.event?.gallery?.photos || []
+        return data?.event?.gallery || []
       case 'portraits':
-        return data?.portrait?.gallery?.photos || []
+        return data?.portrait?.gallery || []
       case 'live':
-        return data?.live?.gallery?.photos || []
+        return data?.live?.gallery || []
       default:
         return []
     }

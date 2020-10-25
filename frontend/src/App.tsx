@@ -15,46 +15,50 @@ initGA('G-Z7QCPWVMCG');
 const GET_DATA = gql`
   query Data {
     food {
-      gallery {
-        ...photos
+      gallery{
+        ...photo
       }
     }
     portrait {
       gallery {
-        ...photos
+        ...photo
       }
     }
     event {
       gallery {
-        ...photos
+        ...photo
       }
     }
     live {
       gallery {
-        ...photos
+        ...photo
       }
     }
     contact {
-      social {
-        facebook
-        instagram
-        vogue
-        youtube
+      cover {
+        ...photo
       }
+      description
+      email
+      phone
+    }
+    social {
+      facebook
+      instagram
+      vogue
+      youtube
     }
   }
 
-  fragment photos on ComponentGalleryGallery {
-    photos {
-      name
-      alternativeText
-      caption
-      width
-      height
-      formats
-      mime
-      url
-    }
+  fragment photo on UploadFile {
+    name
+    alternativeText
+    caption
+    width
+    height
+    formats
+    mime
+    url
   }
 `;
 
