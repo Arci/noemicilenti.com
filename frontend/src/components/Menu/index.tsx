@@ -10,18 +10,18 @@ const Menu: React.FC = () => {
         <img src="https://noemicilenti.com/img/hamburger.png" alt="menu" />
       </nav>
       <section id="logo">
-        <a href="contact.html">
+        <a href="contact">
           <p>Noemi Cilenti</p>
           <p>&copy; NC Photography</p>
         </a>
       </section>
       <section id="links" className={isOpen ? 'open' : ''}>
         <ul>
-          <li><a href="food.html">Food</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="live.html">Live</a></li>
-          <li><a href="portraits.html">Portraits</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="food">Food</a></li>
+          <li><a href="events">Events</a></li>
+          <li><a href="live">Live</a></li>
+          <li><a href="portraits">Portraits</a></li>
+          <li><a href="contact">Contact</a></li>
         </ul>
       </section>
     </>
