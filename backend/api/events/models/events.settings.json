@@ -13,7 +13,7 @@
     "gallery": {
       "type": "component",
       "repeatable": false,
-      "component": "gallery.gallery"
+      "component": "component.gallery"
     }
   }
 }

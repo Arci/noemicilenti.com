@@ -25,11 +25,6 @@
     "description": {
       "type": "richtext"
     },
-    "social": {
-      "type": "component",
-      "repeatable": false,
-      "component": "social.social"
-    },
     "email": {
       "type": "email"
     },

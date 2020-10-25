@@ -1,8 +1,9 @@
 {
   "kind": "singleType",
-  "collectionName": "lives",
+  "collectionName": "social_networks",
   "info": {
-    "name": "live"
+    "name": "socials",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -10,10 +11,10 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "gallery": {
+    "socialNetworks": {
       "type": "component",
       "repeatable": false,
-      "component": "component.gallery"
+      "component": "component.social"
     }
   }
 }
