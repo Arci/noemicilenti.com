@@ -1,8 +1,8 @@
 {
-  "kind": "singleType",
-  "collectionName": "events",
+  "kind": "collectionType",
+  "collectionName": "galleries",
   "info": {
-    "name": "event"
+    "name": "gallery"
   },
   "options": {
     "increments": true,
@@ -10,7 +10,10 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "gallery": {
+    "title": {
+      "type": "string"
+    },
+    "photos": {
       "collection": "file",
       "via": "related",
       "allowedTypes": [
