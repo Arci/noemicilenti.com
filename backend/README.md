@@ -48,6 +48,6 @@ heroku git:remote -a my-app
 To reset the Postgres database on heroku:
 
 ```console
-heroku restart
 heroku pg:reset DATABASE
+heroku restart
 ```
