@@ -2,6 +2,11 @@
 
 Frontend application running [noemicilenti.com](https://noemicilenti.com)
 
+# Develop
+
+1. `yarn install`
+2. enjoy
+
 ## Available Scripts
 
 ### `yarn start`
