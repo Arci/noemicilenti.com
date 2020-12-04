@@ -4,12 +4,14 @@ Backend for [noemicilenti.com](https://noemicilenti.com) based on [strapi](https
 
 # Develop
 
-Create an `.env` file:
-```console
-cp .env.template .env
-```
-
-and fill with correct data.
+1. Create an `.env` file:
+    ```console
+    cp .env.template .env
+    ```
+    
+    and fill with correct data.
+2. `yarn install`
+3. enjoy
 
 ## Available Scripts
 
