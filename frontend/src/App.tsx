@@ -107,7 +107,7 @@ const App: React.FC = () => {
         <Route path="/portraits">
           <PhotoGallery gallery={galleryAdapter.adapt('portraits', data)} />
         </Route>
-        <Route path={['/', '/contact']}>
+        <Route exact path={['/', '/contact']}>
           <Contact info={contactInfoAdapter.adapt(data)} />
         </Route>
       </article>
