@@ -83,8 +83,7 @@ const App: React.FC = () => {
           <Menu socialNetworks={[]} />
         </nav>
         <article>
-          {/* TODO style this */}
-          <div>Error!</div>
+          <div id="loading-error">On ho! This is awkward :(</div>
         </article>
       </>
     );

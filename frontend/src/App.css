@@ -6,9 +6,18 @@ article {
   margin: 20px 0 20px 0;
 }
 
+#loading-error{
+  display: flex;
+  justify-content: center;
+}
+
 @media only screen and (min-width: 992px) {
   article {
     margin-right: 20px;
+  }
+
+  #loading-error{
+    margin-top: 200px;
   }
 }
 
@@ -16,10 +25,12 @@ article {
   #root {
     display: flex;
   }
+
   nav {
     width: 18%;
     margin-left: 20px;
   }
+
   article {
     width: 82%;
   }
@@ -29,6 +40,7 @@ article {
   nav {
     width: 15%;
   }
+
   article {
     width: 85%;
   }
@@ -38,6 +50,7 @@ article {
   nav {
     width: 12%;
   }
+
   article {
     width: 88%;
   }
@@ -47,6 +60,7 @@ article {
   nav {
     width: 10%;
   }
+
   article {
     width: 90%;
   }
