@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { SocialNetwork } from '../../model/data';
+import hamburger from '../../../images/hamburger.png';
+import facebook from '../../../images/facebook.png';
+import youtube from '../../../images/youtube.png';
+import instagram from '../../../images/instagram.png';
+import vogue from '../../../images/vogue.png';
 import './styles.css';
 
 interface Props {
@@ -10,10 +15,14 @@ interface Props {
 const Menu: React.FC<Props> = ({ socialNetworks }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const images = {
+    facebook, youtube, instagram, vogue,
+  };
+
   return (
     <>
       <button type="button" id="hamburger" onClick={() => setIsOpen(!isOpen)}>
-        <img src="https://noemicilenti.com/img/hamburger.png" alt="menu" />
+        <img src={hamburger} alt="menu" />
       </button>
       <section id="logo">
         <p>Noemi Cilenti</p>
@@ -24,7 +33,7 @@ const Menu: React.FC<Props> = ({ socialNetworks }) => {
           {socialNetworks.map((socialNetwork) => (
             <li key={socialNetwork.name} className={socialNetwork.name}>
               <a href={socialNetwork.url} target="_blank" rel="noopener noreferrer">
-                <img src={`https://noemicilenti.com/img/social/${socialNetwork.name}.png`} alt={socialNetwork.name} />
+                <img src={images[socialNetwork.name]} alt={socialNetwork.name} />
               </a>
             </li>
           ))}

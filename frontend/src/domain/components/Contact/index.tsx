@@ -1,6 +1,8 @@
 /* eslint-disable react/no-danger */
 import React from 'react';
 import { ContactInfo } from '../../model/data';
+import email from '../../../images/email.png';
+import phone from '../../../images/phone.png';
 import './styles.css';
 
 interface Props {
@@ -19,13 +21,13 @@ const Contact: React.FC<Props> = ({ info }) => (
     <section id="info">
       <p>
         <a href={`mailto:${info.email}`}>
-          <img src="https://noemicilenti.com/img/social/email.png" alt="email" />
+          <img src={email} alt="email" />
           <span>{info.email}</span>
         </a>
       </p>
       <p>
         <a href={`tel:${info.phone.replaceAll(' ', '')}`}>
-          <img src="https://noemicilenti.com/img/social/phone.png" alt="phone" />
+          <img src={phone} alt="phone" />
           <span>{info.phone}</span>
         </a>
       </p>
