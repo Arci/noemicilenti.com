@@ -2,7 +2,7 @@ overwrite: true
 schema: "https://noemicilenti.herokuapp.com/graphql"
 documents: "./src/**/*.{ts,tsx}"
 generates:
-  src/generated/graphql.tsx:
+  src/adapters/generated/graphql.ts:
     plugins:
       - "typescript"
       - "typescript-operations"

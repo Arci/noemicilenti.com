@@ -1,5 +1,5 @@
 import { SocialNetwork } from '../domain/model/data';
-import { DataQuery } from '../generated/graphql';
+import { DataQuery } from './generated/graphql';
 
 class SocialNetworksAdapter {
   adapt = (data: DataQuery): SocialNetwork[] => {

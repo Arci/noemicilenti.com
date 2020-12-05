@@ -1,4 +1,4 @@
 !.eslintrc.js
 
 build/
-src/generated/graphql.tsx
+src/adapters/generated/**

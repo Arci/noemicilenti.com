@@ -1,17 +1,17 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "strictNullChecks": true,
     "sourceMap": true,
     "noStrictGenericChecks": true,
     "strictBindCallApply": true,
     "strictFunctionTypes": true,
     "strictPropertyInitialization": true,
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
     "removeComments": true,
     "alwaysStrict": true,
     "allowUnreachableCode": false,

@@ -1,5 +1,5 @@
 import { Formats, Photo } from '../domain/model/data';
-import { DataQuery, PhotoFragment, Scalars } from '../generated/graphql';
+import { DataQuery, PhotoFragment, Scalars } from './generated/graphql';
 
 class GalleryAdapter {
   adapt(galleryName: string, data: DataQuery): Photo[] {
