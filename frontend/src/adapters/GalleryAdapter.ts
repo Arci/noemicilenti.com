@@ -1,4 +1,4 @@
-import { Formats, Photo } from '../domain/data';
+import { Formats, Photo } from '../domain/model/data';
 import { DataQuery, PhotoFragment, Scalars } from '../generated/graphql';
 
 class GalleryAdapter {

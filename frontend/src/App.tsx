@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import gql from 'graphql-tag';
 import { useQuery } from '@apollo/client';
-import { initGA, trackPageView } from './components/Tracking';
+import { initGA, trackPageView } from './domain/components/Tracking';
 import SocialNetworksAdapter from './adapters/SocialNetworksAdapter';
 import ContactInfoAdapter from './adapters/ContactInfoAdapter';
 import GalleryAdapter from './adapters/GalleryAdapter';
-import Menu from './components/Menu';
-import Contact from './components/Contact';
-import PhotoGallery from './components/PhotoGallery';
+import Menu from './domain/components/Menu';
+import Contact from './domain/components/Contact';
+import PhotoGallery from './domain/components/PhotoGallery';
 import './App.css';
 
 initGA('G-Z7QCPWVMCG');

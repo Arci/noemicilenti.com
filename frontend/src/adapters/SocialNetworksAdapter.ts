@@ -1,4 +1,4 @@
-import { SocialNetwork } from '../domain/data';
+import { SocialNetwork } from '../domain/model/data';
 import { DataQuery } from '../generated/graphql';
 
 class SocialNetworksAdapter {

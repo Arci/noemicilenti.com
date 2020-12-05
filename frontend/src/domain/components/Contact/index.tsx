@@ -1,6 +1,6 @@
 /* eslint-disable react/no-danger */
 import React from 'react';
-import { ContactInfo } from '../../domain/data';
+import { ContactInfo } from '../../model/data';
 import './styles.css';
 
 interface Props {

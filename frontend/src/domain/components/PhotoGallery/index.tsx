@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import Gallery, { PhotoProps } from 'react-photo-gallery';
 import Carousel, { Modal, ModalGateway, ViewType } from 'react-images';
-import { Photo } from '../../domain/data';
+import { Photo } from '../../model/data';
 import GridLoader from '../GridLoader';
 
 interface Props {

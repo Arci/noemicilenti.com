@@ -1,4 +1,4 @@
-import { ContactInfo, Formats, Photo } from '../domain/data';
+import { ContactInfo, Formats, Photo } from '../domain/model/data';
 import { DataQuery, PhotoFragment, Scalars } from '../generated/graphql';
 
 class ContactInfoAdapter {

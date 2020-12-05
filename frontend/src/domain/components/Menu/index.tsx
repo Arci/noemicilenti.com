@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { SocialNetwork } from '../../domain/data';
+import { SocialNetwork } from '../../model/data';
 import './styles.css';
 
 interface Props {
