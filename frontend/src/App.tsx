@@ -8,6 +8,7 @@ import ContactInfoAdapter from './adapters/ContactInfoAdapter';
 import GalleryAdapter from './adapters/GalleryAdapter';
 import Menu from './domain/components/Menu';
 import Contact from './domain/components/Contact';
+import ContactLoader from './domain/components/ContactLoader';
 import PhotoGallery from './domain/components/PhotoGallery';
 import './App.css';
 
@@ -71,7 +72,12 @@ const App: React.FC = () => {
           <Menu socialNetworks={[]} />
         </nav>
         <article>
-          <PhotoGallery gallery={[]} />
+          <Route path={['/food', '/events', '/live', '/portraits']}>
+            <PhotoGallery gallery={[]} />
+          </Route>
+          <Route exact path={['/', '/contact']}>
+            <ContactLoader />
+          </Route>
         </article>
       </>
     );
